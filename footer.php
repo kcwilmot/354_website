@@ -1,3 +1,4 @@
+<hr>
 <div>
     <div id="footer-left">
         <a href="contact.php"> Contact Info </a>
