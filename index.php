@@ -2,10 +2,10 @@
 
    include_once("index.html");
 
-   $files = scandir('./img');
+   $files = scandir('img/');
    foreach($files as $file) {
      ?> <div id="home-gallery"> 
-        <?php $file ?> </div><?php 
+        <?php echo $file;
    }
 
    include_once("footer.php");
