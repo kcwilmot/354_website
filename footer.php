@@ -12,9 +12,15 @@
         </li>
     </span>
     <span id="footer-right">
+        <li class="footer-accounts">
         <a href="orderhistory.php"> Order History </a>
+</li>
+<li class="footer-accounts">
         <a href="trackpkg.php"> Track Package </a>
+</li>
+<li class="footer-accounts">
         <a href="myaccount.php"> My Account </a>
+</li>
     </span>
 
 </div>

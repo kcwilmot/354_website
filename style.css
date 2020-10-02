@@ -1,7 +1,9 @@
 .footer-left {
-    float:left
+    float:left;
+    width: 50%;
 }
 
 .footer-right {
-    float:right
+    float:right;
+    width:50%;
 }
