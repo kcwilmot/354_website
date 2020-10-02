@@ -5,9 +5,9 @@
    $dirname = "img/";
    $images = glob($dirname."*.jpg");
 
-foreach($images as $image) {
-    echo '<img src="'.$image.'" /><br />';
-}
+   foreach($images as $image) {
+       echo '<img class="home-gallery-img" src="'.$image.'" />';
+   }
 
 
    include_once("footer.php");
