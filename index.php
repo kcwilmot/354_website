@@ -2,12 +2,12 @@
 
    include_once("index.html");
 
-   $files = scandir('img/');
-   foreach($files as $file) {
-     ?> <div id="home-gallery"> 
-        <?php echo $file; ?>
-        <img src="<?php $file ?>"
-        <?php
-   }
+   $dirname = "img/";
+   $images = glob($dirname."*.jpg");
+
+foreach($images as $image) {
+    echo '<img src="'.$image.'" /><br />';
+}
+
 
    include_once("footer.php");
