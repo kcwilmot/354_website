@@ -15,11 +15,11 @@
             </li>
         </div>
         <form>
-            <label> "Search"</label>
+            <label>Search</label>
             <input type="text" id="search-form">
         </form>
         <a href="shop/earrings.php" class="header-shop-list">Earrings</a>
-        <a href="shop/customitem.php" class="header-shop-list">Custom Item</a>
+        <a href="shop/customitem.php" class="header-shop-list">Custom Items</a>
         <a href="about.php" class="header-links">About</a>
     </div>
     <hr>
