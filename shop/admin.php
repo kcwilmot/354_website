@@ -1,5 +1,5 @@
 <?php
-  include_once("header.php");
+  include_once("../header.php");
   /*echo "<style>"; 
     include_once("style.css"); 
   echo "</style>";
@@ -28,4 +28,4 @@
 
 
 <?php
-  include_once("footer.php");
+  include_once("../footer.php");
