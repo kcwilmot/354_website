@@ -1,5 +1,5 @@
 <hr>
-<div>
+<divi id="footer">
     <div id="footer-left">
         <a href="contact.php"> Contact Info </a>
         <li class="footer-socials">
@@ -11,20 +11,19 @@
         <li class="footer-socials">
             <a href="https://www.etsy.com/shop/BiteyCatCustoms"> Etsy </a>
         </li>
-</div>
+    </div>
     <div id="footer-right">
         <li class="footer-accounts">
-        <a href="orderhistory.php"> Order History </a>
-</li>
-<li class="footer-accounts">
-        <a href="trackpkg.php"> Track Package </a>
-</li>
-<li class="footer-accounts">
-        <a href="myaccount.php"> My Account </a>
-</li>
-<li class="footer-temp">
-        <a href="shop/admin.php"> Admin Page (temp) </a>
-
-</div>
-
+            <a href="orderhistory.php"> Order History </a>
+        </li>
+        <li class="footer-accounts">
+            <a href="trackpkg.php"> Track Package </a>
+        </li>
+        <li class="footer-accounts">
+            <a href="myaccount.php"> My Account </a>
+        </li>
+        <li class="footer-temp">
+            <a href="shop/admin.php"> Admin Page (temp) </a>
+        </li>
+    </div>
 </div>

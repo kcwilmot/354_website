@@ -15,9 +15,9 @@
       <label for="item-price">Price</label>
       <input type="number" name="item-price"><br>
       <label for="item-image">Image</label>
-      <input type="number" name="item-image"><br>
+      <input type="text" name="item-image"><br>
       <label for="item-category">Category</label>
-      <input type="number" name="item-category"><br>
+      <input type="text" name="item-category"><br>
       <button name="submit-new-item" type="submit">Submit</button>
   </form>
   </div>
