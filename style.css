@@ -1,20 +1,28 @@
-.footer {
+#footer {
     background-color:#AAAAAA;
     
 }
 
-.footer-left {
+#footer-left {
     float:left;
     width: 50%;
 }
 
-.footer-right {
+#footer-right {
     float:right;
     width:50%;
 }
 
-.logo {
+#logo {
     width: 50;
     height: 65;
+
+}
+
+#tracker-box {
+    margin: auto;
+    background-color: aquamarine;
+    width: 50%;
+    border: 5px solid black;
 
 }
