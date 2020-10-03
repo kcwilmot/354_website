@@ -13,10 +13,10 @@
       <input type="number" name="item-image"><br>
       <label for="item-category">Category</label>
       <input type="number" name="item-category"><br>
-      <label for="submit-new-item">Submit</label>
-      <input type="button" name="submit-new-item"><br>
-</form>
+      <button name="submit-new-item" type="submit">Submit</button>
+  </form>
   </div>
+
 
 
 <?php
