@@ -1,6 +1,6 @@
 <!--header, words, form, "find file" and "upload" buttons, footer-->
 <?php
-  include_once("header.php");
+  include_once("../header.php");
 ?>
 <h1 id="custom-item-header">Custom Items!</h1><br>
 Have an idea? <br> 
@@ -15,4 +15,4 @@ Upload an .svg file!<br>
 </form>
 
 <?php
-  include_once("footer.php");
+  include_once("../footer.php");
