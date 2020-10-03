@@ -1,4 +1,5 @@
 <html>
+    <link rel="styleseet" href="style.css">
     <div id="header-nav">
         <div>
             Bitey Cat Customs<br>
