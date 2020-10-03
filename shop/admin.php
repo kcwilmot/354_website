@@ -1,6 +1,11 @@
 <?php
   include_once("header.php");
+  /*echo "<style>"; 
+    include_once("style.css"); 
+  echo "</style>";
+  */
 ?>
+
 <body> 
   <div>Inventory</div>
   <div>Add Item
@@ -16,6 +21,9 @@
       <button name="submit-new-item" type="submit">Submit</button>
   </form>
   </div>
+  <hr>
+  <div class="">
+
 
 
 
