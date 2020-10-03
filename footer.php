@@ -1,7 +1,7 @@
 <hr>
 <divi id="footer">
     <div id="footer-left">
-        <a href="contact.php"> Contact Info </a>
+        <a href="/contact.php"> Contact Info </a>
         <li class="footer-socials">
             <a href="https://www.facebook.com/biteycatcustoms/"> Facebook </a>
         </li>
@@ -14,16 +14,16 @@
     </div>
     <div id="footer-right">
         <li class="footer-accounts">
-            <a href="orderhistory.php"> Order History </a>
+            <a href="/orderhistory.php"> Order History </a>
         </li>
         <li class="footer-accounts">
-            <a href="trackpkg.php"> Track Package </a>
+            <a href="/trackpkg.php"> Track Package </a>
         </li>
         <li class="footer-accounts">
-            <a href="myaccount.php"> My Account </a>
+            <a href="/myaccount.php"> My Account </a>
         </li>
         <li class="footer-temp">
-            <a href="shop/admin.php"> Admin Page (temp) </a>
+            <a href="/shop/admin.php"> Admin Page (temp) </a>
         </li>
     </div>
 </div>
