@@ -23,7 +23,7 @@
             <a href="/myaccount.php"> My Account </a>
         </li>
         <li class="footer-temp">
-            <a href="/shop/admin.php"> Admin Page (temp) </a>
+            <a href="/admin.php"> Admin Page (temp) </a>
         </li>
     </div>
 </div>
