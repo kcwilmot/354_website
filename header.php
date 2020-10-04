@@ -1,11 +1,12 @@
 <html>
 
-    <link rel="styleseet" href="style.css">
+    <link rel="styleseet" href="/style.css">
 
     <div id="header-nav">
         <div>
             Bitey Cat Customs<br>
-            <img id="logo" src="img/logo.png" alt="Bitey Cat Customs">
+            <a href="index.php"><img id="logo" src="img/logo.png" alt="Bitey Cat Customs"></a>
+                 
         </div>
         <div>
             <li class="header-links">
