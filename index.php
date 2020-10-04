@@ -1,6 +1,6 @@
 <?php
-   include_once("/header.php");
-   include_once("/index.html");
+   include_once("header.php");
+   include_once("index.html");
 
    $dirname = "img/";
    $images = glob($dirname."*.jpg");
