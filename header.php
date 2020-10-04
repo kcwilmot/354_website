@@ -1,9 +1,8 @@
-
+<?php
   session_start();
 ?>
 
 <html>
-<<<<<<< HEAD
 <head>
     <link rel="stylesheet" href="style.css">
 	<link href="favicon.png" type="image/png" rel="shortcut icon"/>
@@ -19,22 +18,19 @@
         <div>
             <li class="header-links">
                 <a href="login.php"> Sign In </a>
-=======
-    <link rel="styleseet" href="/style.css">
     <div id="header-nav">
         <div>
             Bitey Cat Customs<br>
-            <img id="logo" src="/img/logo.png" alt="Bitey Cat Customs">
+            <img id="logo" src="img/logo.png" alt="Bitey Cat Customs">
         </div>
         <div>
             <li class="header-links">
-                <a href="/signin.php"> Sign In </a>
->>>>>>> 45e1a2a... adding relative file paths
+                <a href="signin.php"> Sign In </a>
             </li>
             <li class="header-links">
-                <a href="/checkout.php"> Checkout </a>
+                <a href="checkout.php"> Checkout </a>
             <li class="header-links">
-                <a href="/faq.php"> FAQ </a>
+                <a href="faq.php"> FAQ </a>
             </li>
         </div>
         <form>
