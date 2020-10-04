@@ -1,11 +1,11 @@
 <html>
 
-    <link rel="styleseet" href="/style.css">
+    <link rel="styleseet" href="style.css">
 
     <div id="header-nav">
         <div>
             Bitey Cat Customs<br>
-            <a href="/index.php"><img id="logo" src="img/logo.png" alt="Bitey Cat Customs"></a>
+            <a href="index.php"><img id="logo" src="img/logo.png" alt="Bitey Cat Customs"></a>
                  
         </div>
         <div>
@@ -22,8 +22,8 @@
             <label>Search</label>
             <input type="text" id="search-form">
         </form>
-        <a href="shop/earrings.php" class="header-shop-list">Earrings</a>
-        <a href="shop/customitem.php" class="header-shop-list">Custom Items</a>
+        <a href="earrings.php" class="header-shop-list">Earrings</a>
+        <a href="customitem.php" class="header-shop-list">Custom Items</a>
         <a href="about.php" class="header-links">About</a>
     </div>
     <hr>
