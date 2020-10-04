@@ -1,5 +1,5 @@
 <hr>
-<divi id="footer">
+<div id="footer">
     <div id="footer-left">
         <a href="/contact.php"> Contact Info </a>
         <li class="footer-socials">
@@ -29,3 +29,4 @@
 </div>
 <!--You have found an easter-egg! Be one of the first people 
 to email me about it and you will pass me on all the things!-->
+<!--Github repo: https://github.com/kcwilmot/401_website-->

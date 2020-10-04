@@ -8,7 +8,7 @@
 
 <body> 
   <div>Inventory</div>
-  <div>Add Item
+  <div><h2 id="add-item-header">Add Item</h2>
     <form id="add-item-form">
       <label for="item-name">Item Name</label>
       <input type="text" name="item-name"><br>
@@ -67,7 +67,7 @@
         Yes a Stain
       </li>
     </div>
-    Price: $10.00 <br>
+    Price: $68.70 <br>
     <div class="item-description">
       This is a box, you can put things in it. It has a design on them. Plz buy.
     </div>

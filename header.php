@@ -1,6 +1,13 @@
+<?php
+  session_start();
+?>
+
 <html>
 <head>
-    <link rel="styleseet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+	<link href="favicon.png" type="image/png" rel="shortcut icon"/>
+    <title>Bitey Cat Customs</title>
+
 
     <div id="header-nav">
         <div>
@@ -10,7 +17,7 @@
         </div>
         <div>
             <li class="header-links">
-                <a href="signin.php"> Sign In </a>
+                <a href="login.php"> Sign In </a>
             </li>
             <li class="header-links">
                 <a href="checkout.php"> Checkout </a>
