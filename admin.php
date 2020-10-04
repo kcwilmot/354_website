@@ -22,7 +22,62 @@
   </form>
   </div>
   <hr>
-  <div class="">
+  <div class="current-items">
+    <img class="inventory-list-img" src="img/earring_paw.jpg">
+    <div>
+      <h1>Paw Earrings</h1><br>
+      Wood Type: <br>
+      <li class="wood-type">
+        Cedar
+      </li> 
+      <li class="wood-type">
+        Rosewood 
+      </li><br>
+      Finish: <br>
+      <li class="finish-type">
+        Satin Stain
+      </li>
+      <li class="finish-type">
+        Raw Wood
+      </li>
+    </div>
+    Price: $10.00 <br>
+    <div class="item-description">
+      These are earrings. They have a design on them. Plz buy.
+    </div>
+    <button class="delete-button" type="button">Delete</button>
+  </div>
+  <hr>
+  <div class="current-items">
+    <img class="inventory-list-img" src="img/wood_box.jpg">
+    <div>
+      <h1>A boxy box</h1><br>
+      Wood Type: <br>
+      <li class="wood-type">
+        Cherry
+      </li> 
+      <li class="wood-type">
+        Padauk
+      </li><br>
+      Finish: <br>
+      <li class="finish-type">
+        Pink Stain
+      </li>
+      <li class="finish-type">
+        Yes a Stain
+      </li>
+    </div>
+    Price: $10.00 <br>
+    <div class="item-description">
+      This is a box, you can put things in it. It has a design on them. Plz buy.
+    </div>
+    <button class="delete-button" type="button">Delete</button>
+
+  </div>
+
+
+
+</body>
 
 
 
