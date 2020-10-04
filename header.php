@@ -1,5 +1,5 @@
 <html>
-
+<head>
     <link rel="styleseet" href="style.css">
 
     <div id="header-nav">
@@ -27,6 +27,5 @@
         <a href="about.php" class="header-links">About</a>
     </div>
     <hr>
+</head>
 </html>
-<?php ?>
-
