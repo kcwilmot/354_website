@@ -8,7 +8,11 @@ Contact us for an estimate!<br>
 biteycatcustoms@email.com<br>
 <div id="custom-item-page-spacer"> </div>
 Have something designed?<br>
+<<<<<<< HEAD
 Upload an .svg file!<br>
+=======
+Upload and .svg file!<br>
+>>>>>>> 5b332ff... moved files to main folder
 <form id="custom-item-file-upload">
   <input type="file" id="custom-item-file-upload" name="custom-item-file">
   <input type="submit">

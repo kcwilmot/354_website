@@ -1,5 +1,6 @@
 <!--header, list of items, footer-->
 <?php
+<<<<<<< HEAD
   include_once("header.php");
 ?>
   <div>
@@ -28,3 +29,7 @@
 
 <?php
   include_once("footer.php");
+=======
+  include_once("/header.php");
+  include_once("/footer.php");
+>>>>>>> 5b332ff... moved files to main folder
