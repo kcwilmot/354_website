@@ -1,9 +1,6 @@
 <?php
-<<<<<<< HEAD
+
   include_once("header.php");
-=======
-  include_once("../header.php");
->>>>>>> 5b332ff... moved files to main folder
   /*echo "<style>"; 
     include_once("style.css"); 
   echo "</style>";
@@ -12,11 +9,7 @@
 
 <body> 
   <div>Inventory</div>
-<<<<<<< HEAD
   <div><h2 id="add-item-header">Add Item</h2>
-=======
-  <div>Add Item
->>>>>>> 5b332ff... moved files to main folder
     <form id="add-item-form">
       <label for="item-name">Item Name</label>
       <input type="text" name="item-name"><br>
@@ -30,7 +23,6 @@
   </form>
   </div>
   <hr>
-<<<<<<< HEAD
   <div class="current-items">
     <img class="inventory-list-img" src="img/earring_paw.jpg">
     <div>
@@ -87,16 +79,9 @@
 
 
 </body>
-=======
-  <div class="">
->>>>>>> 5b332ff... moved files to main folder
 
 
 
 
 <?php
-<<<<<<< HEAD
   include_once("footer.php");
-=======
-  include_once("../footer.php");
->>>>>>> 5b332ff... moved files to main folder
