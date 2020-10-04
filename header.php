@@ -12,7 +12,7 @@
     <div id="header-nav">
         <div>
             Bitey Cat Customs<br>
-            <a href="index.php"><img id="logo" src="img/logo.png" alt="Bitey Cat Customs"></a>
+            <a href="/index.php"><img id="logo" src="img/logo.png" alt="Bitey Cat Customs"></a>
                  
         </div>
         <div>
