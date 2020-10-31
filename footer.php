@@ -27,7 +27,6 @@
         </li>
     </div>
 </div>
-weee woo wee woo
 <!--You have found an easter-egg! Be one of the first people 
 to email me about it and you will pass me on all the things!-->
 <!--Github repo: https://github.com/kcwilmot/401_website-->
