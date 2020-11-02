@@ -32,3 +32,10 @@
 #track-pkg-header {
     margin: auto;
 }
+
+.home-gallery-img {
+    max-width: 150px;
+    max-height: 150px;
+    overflow: hidden;
+    scale: 50%;
+}
