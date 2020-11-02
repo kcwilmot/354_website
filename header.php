@@ -1,6 +1,9 @@
 <html>
 <head>
-    <link rel="styleseet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+	<link href="favicon.png" type="image/png" rel="shortcut icon"/>
+    <title>Bitey Cat Customs</title>
+
 
     <div id="header-nav">
         <div>
