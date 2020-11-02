@@ -3,6 +3,7 @@
   include_once("header.php");
 ?>
   <div>
+      <img class="shop-product-img" src="img/earring_paw.jpg">
       <h1>Paw Earrings</h1><br>
       Wood Type: <br>
       <li class="wood-type">
