@@ -1,0 +1,4 @@
+uname=b53457492fa1cc
+pass=47f5c214
+host=us-cdbr-east-02.cleardb.com
+db=heroku_2d1a17904437190
