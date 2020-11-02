@@ -1,6 +1,7 @@
 <?php
    include_once("header.php");
-   include_once("index.html");
+   
+   echo '<h1>Items For Sale</h1>';
 
    $dirname = "img/";
    $images = glob($dirname."*.jpg");
