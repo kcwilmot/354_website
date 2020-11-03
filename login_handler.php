@@ -18,13 +18,13 @@
   //echo "Get user result: \n" . print_r($dao->get_User($user));
   //print_r($user);
   //Get user's enter creds, validate, redirect to home if works
-  //echo "Count: " . count($dao->get_User($user));
+  echo "Count: " . count($dao->get_User($user));
 
   if (count($dao->get_User($user)) > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
     print_r($_SESSION['authenticated']); 
-    header("Location: index.php");
+    header("Location: https://polar-plains-93513.herokuapp.com/index.php");
     exit();
   } 
   
