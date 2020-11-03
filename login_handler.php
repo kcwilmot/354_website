@@ -14,16 +14,17 @@
   $_SESSION['fail'] = array();
 
   $logger->LogDebug("Entered login_handler");
-  print_r($_POST);
-  echo "\n";
-  print_r($user);
+  //print_r($_POST);
+  echo "Get user result: {$dao->get_User($user)}";
+  //print_r($user);
   //Get user's enter creds, validate, redirect to home if works
  
   if ($dao->get_User($user) > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
-    header("Location: index.php");
-    exit();
+    print_r($_SESSION['authenticated']); 
+    //header("Location: index.php");
+    //exit();
   } 
   
   /*
