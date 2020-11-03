@@ -6,15 +6,15 @@
 
   $dao = new Dao();
   $logger = new KLogger ("log.txt" , KLogger::DEBUG);
-/*
+
   $user = new User($_POST['email'], $_POST['password']);
-  $_SESSION['username'] = $user->email;
+//  $_SESSION['username'] = $user->email;
   
-  $_SESSION['success'] = array();
-  $_SESSION['fail'] = array();
-*/
+//  $_SESSION['success'] = array();
+//  $_SESSION['fail'] = array();
+
   $logger->LogDebug("Entered login_handler");
-  echo "Entered Login Handler";
+  echo "Email: " + $_POST['email'] + "\nPassword: " + $_POST['password'];
 /*
   //Get user's enter creds, validate, redirect to home if works
   if ($dao->get_User($user) > 0) {
