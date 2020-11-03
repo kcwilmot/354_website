@@ -49,7 +49,10 @@ class Dao {
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
-    return $q->fetchAll();
+    $q->execute();
+    $ret = $q->fetchAll(PDO::FETCH_ASSOC);
+    echo print_r($result) . "\n";
+    return $ret;
 
   }
 
