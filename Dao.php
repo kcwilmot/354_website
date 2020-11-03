@@ -49,7 +49,7 @@ class Dao {
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
-    return $q->execute();
+    return $q->fetchAll();
 
   }
 
@@ -60,7 +60,12 @@ class Dao {
     $getUserQuery = "select count(*) from users where email = ':email'";
     $q = $conn->prepare($getUserQuery);
     $q->bindParam(":email", $user->email);
-    $q->execute();
+    $ret = $q->execute();
+    if($ret->count() > 0) {
+        return true;
+    } else {
+        return false;
+    }
   }
 
 
