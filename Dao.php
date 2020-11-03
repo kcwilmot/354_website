@@ -9,24 +9,15 @@ class Dao {
   private $pass = "47f5c214";
   private $logger;
 
-<<<<<<< HEAD
   public function __construct () 
   {
-=======
-  public function __construct () {
->>>>>>> 068bb9f1844039fff43f6c9d5f667ca439106f2a
     $this->logger = new KLogger ("log.txt" , KLogger::DEBUG);
   }
 
 
-<<<<<<< HEAD
   public function getConnection () 
   {
     $this->logger->LogDebug("Getting a connection");
-=======
-  public function getConnection () {
-    $this->logger->LogDebug("getting a connection");
->>>>>>> 068bb9f1844039fff43f6c9d5f667ca439106f2a
     try {
       $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
       return $conn;
@@ -52,7 +43,6 @@ class Dao {
   
   public function get_user($user)
   {
-<<<<<<< HEAD
     $this->logger->LogDebug("Getting matching user count from db: [{$user->email}]");
     $conn = $this->getConnection();
     $saveQuery = "select * from users where email = ':email' and password = ':password'";
@@ -71,21 +61,6 @@ class Dao {
     $q = $conn->prepare($getUserQuery);
     $q->bindParam(":email", $user->email);
     $q->execute();
-=======
-    $this->logger->LogInfo("Checking if user exists [{$user->email}]");
-    $conn = $this->getConnection();
-    $saveQuery = "select * from users where email=:email";
-    $q = $conn->prepare($saveQuery);
-    $q->bindParam(":email", $user->email);
-     $q->execute();
-
-  }
-
-  public function user_Exists($user){
-    $conn = $this->getConnection();
-    $saveQuery = "insert into comment (comment, user_id) values (:comment, 1)";
-    $q = $conn->prepare($saveQuery);
->>>>>>> 068bb9f1844039fff43f6c9d5f667ca439106f2a
   }
 
 
