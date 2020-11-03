@@ -1,5 +1,4 @@
 <hr>
-SOME TEST CODE
 <divi id="footer">
     <div id="footer-left">
         <a href="/contact.php"> Contact Info </a>

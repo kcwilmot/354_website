@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -13,7 +17,7 @@
         </div>
         <div>
             <li class="header-links">
-                <a href="signin.php"> Sign In </a>
+                <a href="login.php"> Sign In </a>
             </li>
             <li class="header-links">
                 <a href="checkout.php"> Checkout </a>
