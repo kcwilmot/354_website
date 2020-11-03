@@ -3,18 +3,18 @@
   
   require_once 'Dao.php';
   require_once 'KLogger.php';
-
+  require_once 'User.php';
   $dao = new Dao();
   $logger = new KLogger ("log.txt" , KLogger::DEBUG);
 
-//  $user = new User($_POST['email'], $_POST['password']);
+  $user = new User($_POST['email'], $_POST['password']);
 //  $_SESSION['username'] = $user->email;
   
 //  $_SESSION['success'] = array();
 //  $_SESSION['fail'] = array();
 
   $logger->LogDebug("Entered login_handler");
-  echo "Email: " + $_POST['email'] + "\nPassword: " + $_POST['password'];
+  print_r($_POST);
 /*
   //Get user's enter creds, validate, redirect to home if works
   if ($dao->get_User($user) > 0) {
