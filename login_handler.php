@@ -26,7 +26,11 @@
     print_r($_SESSION['authenticated']); 
     header("Location: https://polar-plains-93513.herokuapp.com/index.php");
     exit();
-  } 
+  } else {
+        $logger->LogDebug("Failed to get user: [{$user}]");
+        header("Location: https://polar-plains-93513.herokuapp.com/login.php");
+    exit();
+  }
   
   /*
   else if (!$dao->user_Exists($user)) {
