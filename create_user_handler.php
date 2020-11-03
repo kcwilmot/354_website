@@ -10,4 +10,6 @@
   if(!$result){
     $logger->LogError("Failed to create a new user.");
     $_SESSION['fail'][] = "Failed to create a new user.";
+    header("Location: https://polar-plains-93513.herokuapp.com/");
+    exit();
   }
