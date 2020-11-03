@@ -14,15 +14,20 @@
   $_SESSION['fail'] = array();
 
   $logger->LogDebug("Entered login_handler");
-  //print_r($_POST);
-
+  print_r($_POST);
+  echo "\n";
+  print_r($user);
   //Get user's enter creds, validate, redirect to home if works
+ /*
   if ($dao->get_User($user) > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
     header("Location: index.php");
-    exit();
-  } else if (!$dao->user_Exists($user)) {
+  //  exit();
+  } 
+  
+  /*
+  else if (!$dao->user_Exists($user)) {
       //redirect back to login form with an error
       $logger->LogError("User does not exist: $user");
       $_SESSION['fail'][] = "Invalid Username or Password";
@@ -33,6 +38,7 @@
       header("Location: https://polar-plains-93513.herokuapp.com/login.php");
     exit();
   }
-  
+  */
   //header("Location: https://polar-plains-93513.herokuapp.com/login.php");
   //    exit();
+  
