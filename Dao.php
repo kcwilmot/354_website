@@ -51,7 +51,7 @@ class Dao {
     $q->bindParam(":password", $user->password);
     $q->execute();
     $ret = $q->fetchAll(PDO::FETCH_ASSOC);
-    echo print_r($result) . "\n";
+    //echo print_r($result) . "\n";
     return $ret;
 
   }
