@@ -6,13 +6,13 @@
 
   $dao = new Dao();
   $logger = new KLogger ("log.txt" , KLogger::DEBUG);
-
+/*
   $user = new User($_POST['email'], $_POST['password']);
   $_SESSION['username'] = $user->email;
   
   $_SESSION['success'] = array();
   $_SESSION['fail'] = array();
-
+*/
   $logger->LogDebug("Entered login_handler");
   echo "Entered Login Handler";
 /*
@@ -34,5 +34,5 @@
     exit();
   }
   */
-  header("Location: https://polar-plains-93513.herokuapp.com/login.php");
-      exit();
+  //header("Location: https://polar-plains-93513.herokuapp.com/login.php");
+  //    exit();
