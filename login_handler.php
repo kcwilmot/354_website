@@ -15,7 +15,7 @@
 
   $logger->LogDebug("Entered login_handler");
   echo "Entered Login Handler";
-
+/*
   //Get user's enter creds, validate, redirect to home if works
   if ($dao->get_User($user) > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
@@ -33,3 +33,6 @@
       header("Location: https://polar-plains-93513.herokuapp.com/login.php");
     exit();
   }
+  */
+  header("Location: https://polar-plains-93513.herokuapp.com/login.php");
+      exit();
