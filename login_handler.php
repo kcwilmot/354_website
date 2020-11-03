@@ -8,10 +8,10 @@
   $logger = new KLogger ("log.txt" , KLogger::DEBUG);
 
   $user = new User($_POST['email'], $_POST['password']);
-//  $_SESSION['username'] = $user->email;
+  $_SESSION['username'] = $user->email;
   
-//  $_SESSION['success'] = array();
-//  $_SESSION['fail'] = array();
+  $_SESSION['success'] = array();
+  $_SESSION['fail'] = array();
 
   $logger->LogDebug("Entered login_handler");
   print_r($_POST);
