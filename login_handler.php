@@ -7,7 +7,7 @@
   $dao = new Dao();
   $logger = new KLogger ("log.txt" , KLogger::DEBUG);
 
-  $user = new User($_POST['email'], $_POST['password']);
+//  $user = new User($_POST['email'], $_POST['password']);
 //  $_SESSION['username'] = $user->email;
   
 //  $_SESSION['success'] = array();
