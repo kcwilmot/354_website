@@ -1,5 +1,5 @@
 <hr>
-<divi id="footer">
+<div id="footer">
     <div id="footer-left">
         <a href="/contact.php"> Contact Info </a>
         <li class="footer-socials">
