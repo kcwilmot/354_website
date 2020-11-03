@@ -15,7 +15,7 @@
 
   $logger->LogDebug("Entered login_handler");
   //print_r($_POST);
-  echo "Get user result: {$dao->get_User($user)}";
+  echo "Get user result: " . $dao->get_User($user);
   //print_r($user);
   //Get user's enter creds, validate, redirect to home if works
  
