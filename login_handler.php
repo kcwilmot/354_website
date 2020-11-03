@@ -18,12 +18,12 @@
   echo "\n";
   print_r($user);
   //Get user's enter creds, validate, redirect to home if works
- /*
+ 
   if ($dao->get_User($user) > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
     header("Location: index.php");
-  //  exit();
+    exit();
   } 
   
   /*
