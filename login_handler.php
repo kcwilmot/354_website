@@ -4,12 +4,12 @@
   require_once 'Dao.php';
   require_once 'KLogger.php';
   require_once 'User.php';
+  
   $dao = new Dao();
   $logger = new KLogger ("log.txt" , KLogger::DEBUG);
-
   $user = new User($_POST['email'], $_POST['password']);
+
   $_SESSION['username'] = $user->email;
-  
   $_SESSION['success'] = array();
   $_SESSION['fail'] = array();
 
@@ -18,12 +18,12 @@
   //echo "Get user result: \n" . print_r($dao->get_User($user));
   //print_r($user);
   //Get user's enter creds, validate, redirect to home if works
-  echo "Count: " . count($dao->get_User($user));
+  //echo "Count: " . count($dao->get_User($user));
 
   if (count($dao->get_User($user)) > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
-    print_r($_SESSION['authenticated']); 
+    //print_r($_SESSION['authenticated']); 
     header("Location: https://polar-plains-93513.herokuapp.com/index.php");
     exit();
   } else {
