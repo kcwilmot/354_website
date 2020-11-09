@@ -27,10 +27,11 @@
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
     //print_r($_SESSION['authenticated']); 
-    header("Location: https://polar-plains-93513.herokuapp.com/index.php");
+    header("Location: index.php");
     exit();
   } else {
         $logger->LogDebug("Failed to get user: [{$user}]");
+        $_SESSION['authenticated'] = false;
         header("Location: https://polar-plains-93513.herokuapp.com/login.php");
     exit();
   }
