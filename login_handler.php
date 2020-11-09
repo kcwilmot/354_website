@@ -23,7 +23,7 @@
   $logger->LogDebug("Returned from get_user, count: [{$ret_val}]");
 
 
-  if ($dao->get_User($user) > 0) {
+  if ($ret_val > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
     //print_r($_SESSION['authenticated']); 

@@ -49,9 +49,10 @@ class Dao {
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
+    $this->logger->LogDebug("Query String " . $q);    
     $q->execute();
     $ret = $q->fetchAll(PDO::FETCH_ASSOC);
-    $this->logger->LogDebug("Number of rows returned from get_user: " . count($user->email));
+    $this->logger->LogDebug("Number of rows returned from get_user: " . count($ret));
     //echo print_r($result) . "\n";
     return count($ret);
 
