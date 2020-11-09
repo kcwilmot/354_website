@@ -24,7 +24,7 @@
   $logger->LogDebug("Returned from get_user, count: [{$ret_val}]");
   $logger->LogDebug("Ret val is: " . gettype($ret_val));
 
-
+try{
   if ($ret_val > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
@@ -32,10 +32,17 @@
     header("Location: https://polar-plains-93513.herokuapp.com/index.php");
     exit();
   } else {
-        $logger->LogDebug("Failed to get user: [{$user}]");
-        //$_SESSION['authenticated'] = false;
-        header("Location: https://polar-plains-93513.herokuapp.com/login.php");
+    $logger->LogDebug("Failed to get user: [{$user}]");
+    //$_SESSION['authenticated'] = false;
+    header("Location: https://polar-plains-93513.herokuapp.com/login.php");
     exit();
   }
+} catch (Exception $e) {
+      //echo print_r($e,1);
+      $this->logger->LogFatal("If-Else ERROR: " . print_r($e, 1));
+      header("Location: https://polar-plains-93513.herokuapp.com/login.php");
+
+      exit();
+}
   
   $logger->LogDebug("After if-else statement.");
