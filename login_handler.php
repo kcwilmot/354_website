@@ -21,6 +21,7 @@
   //echo "Count: " . count($dao->get_User($user));
   $ret_val = $dao->get_User($user);
   $logger->LogDebug("Returned from get_user, count: [{$ret_val}]");
+  $logger->LogDebug("Ret val is: " . gettype($ret_val));
 
 
   if ($ret_val > 0) {
