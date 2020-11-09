@@ -38,3 +38,4 @@
     exit();
   }
   
+  $logger->LogDebug("After if-else statement.");
