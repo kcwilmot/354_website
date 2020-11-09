@@ -20,6 +20,7 @@ class Dao {
     $this->logger->LogDebug("Getting a connection");
     try {
       $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
+      $this->logger->LogFatal("Established DB connection");
       return $conn;
     } catch (Exception $e) {
       //echo print_r($e,1);
@@ -43,12 +44,12 @@ class Dao {
   
   public function get_user($user)
   {
-    $this->logger->LogDebug("Getting matching user count from db: [{$user->email}]");
+      $this->logger->LogDebug("Getting matching user count from db: [{$user->email}]");
     $conn = $this->getConnection();
-    $saveQuery = "select * from users where email = ':email' and password = ':password'";
+    $saveQuery = "select * from users where email = $user->email and password = $user->password";
     $q = $conn->prepare($saveQuery);
-    $q->bindParam(":email", $user->email);
-    $q->bindParam(":password", $user->password);
+    //$q->bindParam(":email", $user->email);
+    //$q->bindParam(":password", $user->password);
     $this->logger->LogDebug("Query String " . $q);    
     $q->execute();
     $ret = $q->fetchAll(PDO::FETCH_ASSOC);
