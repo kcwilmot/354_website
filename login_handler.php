@@ -24,7 +24,7 @@
   $logger->LogDebug("Ret val is: " . gettype($ret_val));
 
 
-  if ($ret_val > 0) {
+  if ($ret_val > "0") {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
     //print_r($_SESSION['authenticated']); 
