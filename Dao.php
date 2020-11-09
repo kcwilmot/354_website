@@ -39,7 +39,9 @@ class Dao {
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":comment", $comment);
     $q->bindParam(":password", $password);
-    return $q->execute();
+    $ret = $q->execute();
+    $this->logger->LogDebug("Create User query execution result: " . print_r($ret));
+    return $ret;
 
   } 
   
