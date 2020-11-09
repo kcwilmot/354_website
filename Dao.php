@@ -50,11 +50,12 @@ class Dao {
     
     $conn = $this->getConnection();
     $saveQuery = "select * from users where email = '$user->email' and password = '$user->password'";
-      //$this->logger->LogDebug("Query String: [{$saveQuery}]");
+    $this->logger->LogDebug("Query String: [{$saveQuery}]");
+    
     $q = $conn->query($saveQuery, PDO::FETCH_ASSOC);
     //$q->bindParam(":email", $user->email);
     //$q->bindParam(":password", $user->password);
-      //$this->logger->LogDebug("Prepared query String: " . print_r($q,1));    
+    $this->logger->LogDebug("Prepared query String: " . print_r($q,1));    
     //$q->execute(array(':email' => $user->email, ':password' => $user->password));
       //$this->logger->LogDebug("\$q after execute: " . $q);    
     //$ret = $q->fetchAll();
