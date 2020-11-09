@@ -52,13 +52,16 @@ class Dao {
     $saveQuery = "select * from users where email = ':email' and password = ':password'";
     $this->logger->LogDebug("Query String: [{$saveQuery}]");
     
-    $q = $conn->query($saveQuery, PDO::FETCH_ASSOC);
+    $q = $conn->query($saveQuery);
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
     $this->logger->LogDebug("Prepared query String: " . print_r($q,1));    
+    
     $q->execute(array(':email' => $user->email, ':password' => $user->password));
     $this->logger->LogDebug("\$q after execute: " . print_r($q,1));    
+    
     $ret = $q->fetchAll();
+    $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
     $ret = count($q);
     $this->logger->LogDebug("Number of rows returned from get_user: " . count($ret));
     return count($ret);
