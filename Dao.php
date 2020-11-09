@@ -44,10 +44,10 @@ class Dao {
   
   public function get_user($user)
   {
-      $this->logger->LogDebug("Getting matching user count from db: [{$user->email}]");
+      $this->logger->LogDebug("Getting matching user count from db: [{$user->email}, {$user->password}]");
     $conn = $this->getConnection();
     $saveQuery = "select * from users where email = $user->email and password = $user->password";
-      $this->logger->LogDebug("Query String: [{$user->email}]");
+      $this->logger->LogDebug("Query String: [{$saveQuery}]");
     $q = $conn->prepare($saveQuery);
     //$q->bindParam(":email", $user->email);
     //$q->bindParam(":password", $user->password);
