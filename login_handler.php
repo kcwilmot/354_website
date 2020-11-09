@@ -41,9 +41,6 @@ try{
 } catch (Exception $e) {
       //echo print_r($e,1);
       $this->logger->LogFatal("If-Else ERROR: " . print_r($e, 1));
-      header("Location: https://polar-plains-93513.herokuapp.com/login.php");
 
-      exit();
 }
   
-  $logger->LogDebug("After if-else statement.");
