@@ -52,7 +52,7 @@ class Dao {
     $q = $conn->prepare($saveQuery, PDO::FETCH_ASSOC);
     //$q->bindParam(":email", $user->email);
     //$q->bindParam(":password", $user->password);
-      $this->logger->LogDebug("Prepared query String: " . $q);    
+      $this->logger->LogDebug("Prepared query String: " . print_r($q,1));    
     $q->execute(array(':email' => $user->email, ':password' => $user->password));
       $this->logger->LogDebug("\$q after execute: " . $q);    
     $ret = $q->fetchAll();
