@@ -1,4 +1,5 @@
 <?php
+try{
   session_start();
   
   require_once 'Dao.php';
@@ -24,7 +25,7 @@
   $logger->LogDebug("Returned from get_user, count: [{$ret_val}]");
   $logger->LogDebug("Ret val is: " . gettype($ret_val));
 
-try{
+
   if ($ret_val > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
