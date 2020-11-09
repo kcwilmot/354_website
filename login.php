@@ -17,6 +17,9 @@
       <div>Password: <input type="password" name="password"/></div>
       <div><input type="submit" value="Login"></div>
     </form>
+
+    New to the site? 
+    <a href="signup.php">Click here to create a new user</a>
   </body>
 </html>
   
