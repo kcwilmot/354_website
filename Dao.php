@@ -53,7 +53,7 @@ class Dao {
     $ret = $q->fetchAll(PDO::FETCH_ASSOC);
     $this->logger->LogDebug("Number of rows returned from get_user: " . count($user->email));
     //echo print_r($result) . "\n";
-    return $ret;
+    return count($ret);
 
   }
 

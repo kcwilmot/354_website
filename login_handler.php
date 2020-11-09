@@ -20,7 +20,7 @@
   //Get user's enter creds, validate, redirect to home if works
   //echo "Count: " . count($dao->get_User($user));
 
-  if (count($dao->get_User($user)) > 0) {
+  if ($dao->get_User($user) > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
     //print_r($_SESSION['authenticated']); 
