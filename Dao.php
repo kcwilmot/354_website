@@ -55,7 +55,7 @@ class Dao {
     $q = $conn->query($saveQuery);
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
-    $this->logger->LogDebug("Prepared query String: " . print_r($q,1));    
+    $this->logger->LogDebug("\$q after bindParam(): " . print_r($q,1));    
     
     $q->execute(array(':email' => $user->email, ':password' => $user->password));
     $this->logger->LogDebug("\$q after execute: " . print_r($q,1));    
