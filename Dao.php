@@ -46,7 +46,7 @@ class Dao {
   
   public function get_user($user)
   {
-    $this->logger->LogDebug("Getting matching user count from db: [{$user->email}]");
+    $this->logger->LogDebug("Getting matching user count from db: [{$user->email}, {$user->password}]");
     
     $conn = $this->getConnection();
     $saveQuery = "select * from users where email = '$user->email' and password = '$user->password'";
