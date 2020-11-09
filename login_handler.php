@@ -1,7 +1,7 @@
 <?php
 try{
   session_start();
-  
+
   require_once 'Dao.php';
   require_once 'KLogger.php';
   require_once 'User.php';
@@ -13,14 +13,8 @@ try{
   $_SESSION['username'] = $user->email;
   $_SESSION['success'] = array();
   $_SESSION['fail'] = array();
-  //$_SESSION['authenticated'] = false;
 
   $logger->LogDebug("Entered login_handler");
-  //print_r($_POST);
-  //echo "Get user result: \n" . print_r($dao->get_User($user));
-  //print_r($user);
-  //Get user's enter creds, validate, redirect to home if works
-  //echo "Count: " . count($dao->get_User($user));
   $ret_val = $dao->get_User($user);
   $logger->LogDebug("Returned from get_user, count: [{$ret_val}]");
   $logger->LogDebug("Ret val is: " . gettype($ret_val));
