@@ -19,7 +19,8 @@ class Dao {
   {
     $this->logger->LogDebug("Getting a connection");
     try {
-      $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
+      $dsn = 'mysql:dbname=heroku_2d1a17904437190;host=us-cdbr-east-02.cleardb.com';
+      $conn = new PDO($dsn, $this->user, $this->pass);
       $this->logger->LogDebug("Established DB connection: " . $conn);
       foreach($dbh->query('SELECT * from users') as $row) {
         print_r($row);
