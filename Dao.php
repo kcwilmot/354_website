@@ -57,8 +57,9 @@ class Dao {
     $q->bindParam(":password", $user->password);
     $this->logger->LogDebug("\$q after bindParam(): " . print_r($q,1));    
     
-    $q->execute(array(':email' => $user->email, ':password' => $user->password));
+    $t = $q->execute();
     $this->logger->LogDebug("\$q after execute: " . print_r($q,1));    
+    $this->logger->LogDebug("Execute return val: " . $t);    
     
     $ret = $q->fetchAll();
     $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
