@@ -19,10 +19,11 @@ class Dao {
   {
     $this->logger->LogDebug("Getting a connection");
     try {
-      $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
+      $dsn = "mysql:dbname=$this->db;host=$this->host";
+      $conn = new PDO($dsn, $this->user, $this->pass);
+      $this->logger->LogDebug("Established DB connection");
       return $conn;
     } catch (Exception $e) {
-      //echo print_r($e,1);
       $this->logger->LogFatal("FAILED TO ESTABLISH DB CONNECTION: " . print_r($e, 1));
       exit;
     }
@@ -35,24 +36,36 @@ class Dao {
     $conn = $this->getConnection();
     $saveQuery = "insert into users (email, password) values (:email, :password)";
     $q = $conn->prepare($saveQuery);
-    $q->bindParam(":comment", $comment);
-    $q->bindParam(":password", $password);
-    return $q->execute();
+    $q->bindParam(":email", $user->email);
+    $q->bindParam(":password", $user->password);
+    $ret = $q->execute();
+    $this->logger->LogDebug("Create User query execution result: [" . print_r($ret) . "]");
+    return $ret;
 
   } 
   
   public function get_user($user)
   {
-    $this->logger->LogDebug("Getting matching user count from db: [{$user->email}]");
+    $this->logger->LogDebug("Getting matching user count from db: [{$user->email}, {$user->password}]");
+    
     $conn = $this->getConnection();
     $saveQuery = "select * from users where email = ':email' and password = ':password'";
-    $q = $conn->prepare($saveQuery);
+    $this->logger->LogDebug("Query String: [{$saveQuery}]");
+    
+    $q = $conn->query($saveQuery);
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
-    $q->execute();
-    $ret = $q->fetchAll(PDO::FETCH_ASSOC);
-    //echo print_r($result) . "\n";
-    return $ret;
+    $this->logger->LogDebug("\$q after bindParam(): " . print_r($q,1));    
+    
+    $t = $q->execute();
+    $this->logger->LogDebug("\$q after execute: " . print_r($q,1));    
+    $this->logger->LogDebug("Execute return val: " . $t);    
+    
+    $ret = $q->fetchAll();
+    $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
+    $ret = count($q);
+    $this->logger->LogDebug("Number of rows returned from get_user: " . count($ret));
+    return count($ret);
 
   }
 
