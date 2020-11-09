@@ -25,7 +25,7 @@ try{
   $logger->LogDebug("Returned from get_user, count: [{$ret_val}]");
   $logger->LogDebug("Ret val is: " . gettype($ret_val));
 
-
+/*
   if ($ret_val > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
     $_SESSION['authenticated'] = true;
@@ -38,6 +38,9 @@ try{
     header("Location: https://polar-plains-93513.herokuapp.com/login.php");
     exit();
   }
+  */
+    $logger->LogDebug("After if-else");
+
 } catch (Exception $e) {
       //echo print_r($e,1);
       $this->logger->LogFatal("If-Else ERROR: " . print_r($e, 1));
