@@ -47,7 +47,7 @@ class Dao {
   {
       $this->logger->LogDebug("Getting matching user count from db: [{$user->email}, {$user->password}]");
     $conn = $this->getConnection();
-    $saveQuery = "select * from users where email = ':email' and password = 'password'";
+    $saveQuery = "select * from users where email = ':email' and password = ':password'";
       $this->logger->LogDebug("Query String: [{$saveQuery}]");
     $q = $conn->prepare($saveQuery, PDO::FETCH_ASSOC);
     //$q->bindParam(":email", $user->email);
