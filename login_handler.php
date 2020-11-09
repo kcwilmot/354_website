@@ -19,6 +19,9 @@
   //print_r($user);
   //Get user's enter creds, validate, redirect to home if works
   //echo "Count: " . count($dao->get_User($user));
+  $ret_val = $dao->get_User($user);
+  $logger->LogDebug("Returned from get_user, count: [{$ret_val}]");
+
 
   if ($dao->get_User($user) > 0) {
     $logger->LogDebug("User authenticated: [{$user}]");
