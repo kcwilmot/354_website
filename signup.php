@@ -5,8 +5,8 @@
   <body>
     <h1>New User</h1>
     <?php
-      if (isset($_SESSION['authenticated']) && !$_SESSION['authenticated']) {
-        echo "<div class='bad'>Invalid Username or password</div>";
+      foreach ($_SESSION['fail'] as $message) {
+        echo "<div class='bad'>{$message}<span class='fadeout'>X</span></div>";
       }
     ?>
     <form method="post" action="create_user_handler.php">

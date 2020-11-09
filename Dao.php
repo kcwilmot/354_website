@@ -37,8 +37,8 @@ class Dao {
     $conn = $this->getConnection();
     $saveQuery = "insert into users (email, password) values (:email, :password)";
     $q = $conn->prepare($saveQuery);
-    $q->bindParam(":comment", $comment);
-    $q->bindParam(":password", $password);
+    $q->bindParam(":email", $user->email);
+    $q->bindParam(":password", $user->password);
     $ret = $q->execute();
     $this->logger->LogDebug("Create User query execution result: " . print_r($ret));
     return $ret;
