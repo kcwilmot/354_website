@@ -13,7 +13,7 @@ try{
   $_SESSION['username'] = $user->email;
   $_SESSION['success'] = array();
   $_SESSION['fail'] = array();
-  $_SESSION['authenticated'] = false;
+  //$_SESSION['authenticated'] = false;
 
   $logger->LogDebug("Entered login_handler");
   //print_r($_POST);
@@ -27,14 +27,14 @@ try{
 
 
   if ($ret_val > 0) {
-    $logger->LogDebug("User authenticated: [{$user}]");
-    //$_SESSION['authenticated'] = true;
+    $logger->LogDebug("User authenticated");
+    $_SESSION['authenticated'] = true;
     //print_r($_SESSION['authenticated']); 
     //header("Location: https://polar-plains-93513.herokuapp.com/index.php");
     //exit();
   } else {
-    $logger->LogDebug("Failed to get user: [{$user}]");
-    //$_SESSION['authenticated'] = false;
+    $logger->LogDebug("Failed to get user");
+    $_SESSION['authenticated'] = false;
     //header("Location: https://polar-plains-93513.herokuapp.com/login.php");
     //exit();
   }
