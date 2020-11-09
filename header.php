@@ -8,7 +8,6 @@
 	<link href="favicon.png" type="image/png" rel="shortcut icon"/>
     <title>Bitey Cat Customs</title>
 
-
     <div id="header-nav">
         <div>
             Bitey Cat Customs<br>
@@ -17,16 +16,7 @@
         </div>
         <div>
             <li class="header-links">
-                <a href="login.php"> Sign In </a>
-    <div id="header-nav">
-        <div>
-            Bitey Cat Customs<br>
-            <img id="logo" src="img/logo.png" alt="Bitey Cat Customs">
-        </div>
-        <div>
-            <li class="header-links">
-                <a href="signin.php"> Sign In </a>
-            </li>
+                <a href="login.php"> Login </a>
             <li class="header-links">
                 <a href="checkout.php"> Checkout </a>
             <li class="header-links">
