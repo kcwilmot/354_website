@@ -24,7 +24,6 @@ class Dao {
       $this->logger->LogDebug("Established DB connection");
       return $conn;
     } catch (Exception $e) {
-      //echo print_r($e,1);
       $this->logger->LogFatal("FAILED TO ESTABLISH DB CONNECTION: " . print_r($e, 1));
       exit;
     }
@@ -40,17 +39,18 @@ class Dao {
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
     $ret = $q->execute();
-    $this->logger->LogDebug("Create User query execution result: " . print_r($ret));
+    $this->logger->LogDebug("Create User query execution result: [" . print_r($ret) . "]");
     return $ret;
 
   } 
   
   public function get_user($user)
   {
-      $this->logger->LogDebug("Getting matching user count from db: [{$user->email}, {$user->password}]");
+    $this->logger->LogDebug("Getting matching user count from db: [{$user->email}]");
+    
     $conn = $this->getConnection();
     $saveQuery = "select * from users where email = '$user->email' and password = '$user->password'";
-      $this->logger->LogDebug("Query String: [{$saveQuery}]");
+      //$this->logger->LogDebug("Query String: [{$saveQuery}]");
     $q = $conn->query($saveQuery, PDO::FETCH_ASSOC);
     //$q->bindParam(":email", $user->email);
     //$q->bindParam(":password", $user->password);
@@ -59,8 +59,7 @@ class Dao {
       //$this->logger->LogDebug("\$q after execute: " . $q);    
     //$ret = $q->fetchAll();
     $ret = count($q);
-      $this->logger->LogDebug("Number of rows returned from get_user: " . count($ret));
-    //echo print_r($result) . "\n";
+    $this->logger->LogDebug("Number of rows returned from get_user: " . count($ret));
     return count($ret);
 
   }
