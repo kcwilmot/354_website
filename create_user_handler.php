@@ -24,14 +24,18 @@ try{
     exit();
   }
 
-  $dao = new Dao();
   $result = $dao->create_user($user);
 
   if(!$result){
     $logger->LogError("Failed to create a new user.");
-    $_SESSION['fail'][] = "Failed to create a new user.";
+    $_SESSION['fail'][] = "User already exists.";
+    header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
+    exit();
+  } else {
+    $logger->LogDebug("New User Created!.");
     header("Location: https://polar-plains-93513.herokuapp.com/myaccount.php");
     exit();
+
   }
 
 } catch (Exception $e){

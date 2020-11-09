@@ -23,6 +23,7 @@ try{
   if ($ret_val > 0) {
     $logger->LogDebug("User authenticated");
     $_SESSION['authenticated'] = true;
+    $_SESSION['user'] = $user->email;
     //print_r($_SESSION['authenticated']); 
     header("Location: https://polar-plains-93513.herokuapp.com/index.php");
     exit();

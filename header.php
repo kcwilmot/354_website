@@ -16,7 +16,13 @@
         </div>
         <div>
             <li class="header-links">
-                <a href="login.php"> Login </a>
+                <?php
+                  if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+                      echo "<a href=\"logout_handler.php\">Log Out</a>";
+                  } else {
+                  echo "<a href=\"login.php\"> Login </a>";
+                  }
+                ?>
             <li class="header-links">
                 <a href="checkout.php"> Checkout </a>
             <li class="header-links">
