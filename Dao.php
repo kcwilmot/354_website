@@ -20,7 +20,7 @@ class Dao {
     $this->logger->LogDebug("Getting a connection");
     try {
       $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
-      $this->logger->LogDebug("Established DB connection");
+      $this->logger->LogDebug("Established DB connection: " . $conn);
       return $conn;
     } catch (Exception $e) {
       //echo print_r($e,1);
@@ -46,14 +46,15 @@ class Dao {
   {
       $this->logger->LogDebug("Getting matching user count from db: [{$user->email}, {$user->password}]");
     $conn = $this->getConnection();
-    $saveQuery = "select * from users where email = '$user->email' and password = '$user->password'";
+    $saveQuery = "select * from users where email = ':email' and password = 'password'";
       $this->logger->LogDebug("Query String: [{$saveQuery}]");
-    $q = $conn->prepare($saveQuery);
+    $q = $conn->prepare($saveQuery, PDO::FETCH_ASSOC);
     //$q->bindParam(":email", $user->email);
     //$q->bindParam(":password", $user->password);
-      $this->logger->LogDebug("Prepared query String " . $q);    
-    $q->execute();
-    $ret = $q->fetchAll(PDO::FETCH_ASSOC);
+      $this->logger->LogDebug("Prepared query String: " . $q);    
+    $q->execute(array(':email' => $user->email, ':password' => $user->password));
+      $this->logger->LogDebug("\$q after execute: " . $q);    
+    $ret = $q->fetchAll();
       $this->logger->LogDebug("Number of rows returned from get_user: " . count($ret));
     //echo print_r($result) . "\n";
     return count($ret);
