@@ -19,7 +19,10 @@ class Dao {
   {
     $this->logger->LogDebug("Getting a connection");
     try {
-      $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
+      $conn = new PDO('mysql:host={$this->host};dbname={$this->db}', $this->user, $this->pass);
+      foreach($dbh->query('SELECT * from users') as $row) {
+        print_r($row);
+      }
       $this->logger->LogDebug("Established DB connection: " . $conn);
       return $conn;
     } catch (Exception $e) {
