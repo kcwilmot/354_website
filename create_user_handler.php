@@ -33,6 +33,9 @@ try{
     exit();
   } else {
     $logger->LogDebug("New User Created!.");
+    $_SESSION['authenticated'] = true;
+    $_SESSION['authlevel'] = 0;
+    $_SESSION['user'] = $user->email;
     header("Location: https://polar-plains-93513.herokuapp.com/myaccount.php");
     exit();
 

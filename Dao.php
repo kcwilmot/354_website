@@ -41,7 +41,7 @@ class Dao {
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
     $ret = $q->execute();
-    
+
     $this->logger->LogDebug("Create User query execution result: " . print_r($ret));
     return $ret;
 
@@ -80,14 +80,15 @@ class Dao {
     $q->execute();
     $ret = $q->fetchAll();
 
-    $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
+    $this->logger->LogDebug("Return array from fetchAll(): " . print_r($ret,1));
+    $this->logger->LogDebug("Return val of \$ret[0]['authlevel']: " . print_r($ret[0]['authlevel'],1));
 
     if($ret[0]['authlevel'] == 1){
       $this->logger->LogDebug("User [{$user->email}] is an admin.");
-      return true;
+      return 1;
     } else {
       $this->logger->LogDebug("User [{$user->email}] is a std user.");
-      return false;
+      return 0;
     }
   }
 
