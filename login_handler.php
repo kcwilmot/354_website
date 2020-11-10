@@ -10,7 +10,7 @@ try{
   $logger = new KLogger ("log.txt" , KLogger::DEBUG);
   $user = new User($_POST['email'], $_POST['password']);
 
-  $_SESSION['username'] = $user->email;
+  $_SESSION['user'] = $user->email;
   $_SESSION['success'] = array();
   $_SESSION['fail'] = array();
 
@@ -24,6 +24,8 @@ try{
     $_SESSION['user'] = $user->email;
 
     header("Location: https://polar-plains-93513.herokuapp.com/index.php");
+    $logger->LogDebug("Session: " . print_r($_SESSION,1));
+
     exit();
 
   } else {
@@ -33,6 +35,8 @@ try{
     $_SESSION['fail'][] = "Username or password is incorrect.";
 
     header("Location: https://polar-plains-93513.herokuapp.com/login.php");
+    $logger->LogDebug("Session: " . print_r($_SESSION,1));
+
     exit();
   }
   

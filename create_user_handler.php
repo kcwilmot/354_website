@@ -10,7 +10,6 @@ try{
   $logger = new KLogger ("log.txt" , KLogger::DEBUG);
   $user = new User($_POST['email'], $_POST['password']);
 
-  $_SESSION['username'] = $user->email;
   $_SESSION['success'] = array();
   $_SESSION['fail'] = array();
 
@@ -28,15 +27,22 @@ try{
 
   if(!$result){
     $logger->LogError("Failed to create a new user.");
+
     $_SESSION['fail'][] = "User already exists.";
     header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
+    $logger->LogDebug("Session: " . print_r($_SESSION,1));
+    
     exit();
+
   } else {
     $logger->LogDebug("New User Created!.");
+
+    $_SESSION['user'] = $user->email;
     $_SESSION['authenticated'] = true;
     $_SESSION['authlevel'] = 0;
-    $_SESSION['user'] = $user->email;
     header("Location: https://polar-plains-93513.herokuapp.com/myaccount.php");
+    $logger->LogDebug("Session: " . print_r($_SESSION,1));
+
     exit();
 
   }

@@ -61,7 +61,7 @@ class Dao {
     
     //$this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
 
-    if($ret[0]['email'] == $user->email && $ret[0]['password'] == $user->password){
+    if($ret[0]['email'] == $user->email && $ret[0]['password'] == $user->password) {
       return true;
     } else {
       return false;
@@ -83,7 +83,7 @@ class Dao {
     $this->logger->LogDebug("Return array from fetchAll(): " . print_r($ret,1));
     $this->logger->LogDebug("Return val of \$ret[0]['authlevel']: " . print_r($ret[0]['authlevel'],1));
 
-    if($ret[0]['authlevel'] == 1){
+    if($ret[0]['authlevel'] == 1) {
       $this->logger->LogDebug("User [{$user->email}] is an admin.");
       return 1;
     } else {
