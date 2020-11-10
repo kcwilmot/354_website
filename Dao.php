@@ -33,39 +33,33 @@ class Dao {
 
   public function create_user($user)
   {
-    $this->logger->LogInfo("Creating a new user [{$user->email}]");
+    $this->logger->LogInfo("Creating a new user [{$user->email}] as a standard user.");
+
     $conn = $this->getConnection();
-    $saveQuery = "insert into users (email, password) values (:email, :password)";
+    $saveQuery = "insert into users (email, password, authlevel) values (:email, :password, 0)";
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
     $ret = $q->execute();
-    $this->logger->LogDebug("Create User query execution result: [" . print_r($ret) . "]");
+    
+    $this->logger->LogDebug("Create User query execution result: " . print_r($ret));
     return $ret;
 
   } 
   
   public function get_user($user)
   {
-        $this->logger->LogDebug("Getting matching user count from db: [{$user->email}, {$user->password}]");
+    $this->logger->LogDebug("Checking if user [{$user->email}] exists.");
     
     $conn = $this->getConnection();
-    $saveQuery = "select email,password from users where email = :email and password = :password";
-        $this->logger->LogDebug("Query String: [{$saveQuery}]");
-    
+    $saveQuery = "select email,password from users where email = :email and password = :password";    
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
-    
-        $this->logger->LogDebug("\$q after bindParam(): " . print_r($q,1));    
-    
-    $t = $q->execute();
-        $this->logger->LogDebug("\$q after execute: " . print_r($q,1));    
-        //$this->logger->LogDebug("Execute return val: " . $t);    
-    
+    $q->execute();
     $ret = $q->fetchAll();
-        $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
-        $this->logger->LogDebug("Email and Pass: [{$ret[0]['email']},{$ret[0]['password']}]");
+    
+    //$this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
 
     if($ret[0]['email'] == $user->email && $ret[0]['password'] == $user->password){
       return true;
@@ -74,18 +68,26 @@ class Dao {
     }
   }
 
-  public function user_Exists($user)
+  public function is_admin($user)
   {
-    $this->logger->LogDebug("Checking if user exists: [{$user->email}]");
+    $this->logger->LogDebug("Checking if [{$user->email}] is an admin.");
+    
     $conn = $this->getConnection();
-    $getUserQuery = "select count(*) from users where email = ':email'";
-    $q = $conn->prepare($getUserQuery);
+    $saveQuery = "select authlevel from users where email = :email and password = :password";    
+    $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
-    $ret = $q->execute();
-    if($ret->count() > 0) {
-        return true;
+    $q->bindParam(":password", $user->password);
+    $q->execute();
+    $ret = $q->fetchAll();
+
+    $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
+
+    if($ret[0]['authlevel'] == 1){
+      $this->logger->LogDebug("User [{$user->email}] is an admin.");
+      return true;
     } else {
-        return false;
+      $this->logger->LogDebug("User [{$user->email}] is a std user.");
+      return false;
     }
   }
 
