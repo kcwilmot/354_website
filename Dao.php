@@ -67,15 +67,11 @@ class Dao {
         $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
         $this->logger->LogDebug("Email and Pass: [{$ret[0]['email']},{$ret[0]['password']}]");
 
-    if($ret['email'] == $user->email && $ret['password'] == $user->password){
+    if($ret[0]['email'] == $user->email && $ret[0]['password'] == $user->password){
       return true;
     } else {
       return false;
     }
-        $ret = count($q);
-        $this->logger->LogDebug("Number of rows returned from get_user: " . count($ret));
-    return count($ret);
-
   }
 
   public function user_Exists($user)
