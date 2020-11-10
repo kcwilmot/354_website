@@ -1,5 +1,6 @@
 <?php
 require_once 'KLogger.php';
+require_once 'User.php';
 
 class Dao {
 
@@ -64,8 +65,8 @@ class Dao {
     
     $ret = $q->fetchAll();
         $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
-        $this->logger->LogDebug("Email and Pass: [{$ret['email']},{$ret['password']}]");
-        
+        $this->logger->LogDebug("Email and Pass: [{$ret[0]['email']},{$ret[0]['password']}]");
+
     if($ret['email'] == $user->email && $ret['password'] == $user->password){
       return true;
     } else {
