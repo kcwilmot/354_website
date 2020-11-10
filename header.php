@@ -8,7 +8,6 @@
 	<link href="favicon.png" type="image/png" rel="shortcut icon"/>
     <title>Bitey Cat Customs</title>
 
-
     <div id="header-nav">
         <div>
             Bitey Cat Customs<br>
@@ -17,8 +16,13 @@
         </div>
         <div>
             <li class="header-links">
-                <a href="login.php"> Sign In </a>
-            </li>
+                <?php
+                  if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+                      echo "<a href=\"logout_handler.php\">Log Out</a>";
+                  } else {
+                  echo "<a href=\"login.php\"> Login </a>";
+                  }
+                ?>
             <li class="header-links">
                 <a href="checkout.php"> Checkout </a>
             <li class="header-links">
