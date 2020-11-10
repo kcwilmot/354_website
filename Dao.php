@@ -49,7 +49,7 @@ class Dao {
         $this->logger->LogDebug("Getting matching user count from db: [{$user->email}, {$user->password}]");
     
     $conn = $this->getConnection();
-    $saveQuery = "select * from users where email = :email and password = :password";
+    $saveQuery = "select email,password from users where email = :email and password = :password";
         $this->logger->LogDebug("Query String: [{$saveQuery}]");
     
     $q = $conn->prepare($saveQuery);
@@ -64,7 +64,14 @@ class Dao {
     
     $ret = $q->fetchAll();
         $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
-    $ret = count($q);
+        $this->logger->LogDebug("Email and Pass: [{$ret['email']},{$ret['password']}]");
+        
+    if($ret['email'] == $user->email && $ret['password'] == $user->password){
+      return true;
+    } else {
+      return false;
+    }
+        $ret = count($q);
         $this->logger->LogDebug("Number of rows returned from get_user: " . count($ret));
     return count($ret);
 
