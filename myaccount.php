@@ -4,13 +4,18 @@
   include_once("header.php");
 
   //Check if authenticated
-  if (isset($_SESSION['authenticated']) && !$_SESSION['authenticated'] || !isset($_SESSION['authenticated'])) {
+  if ((isset($_SESSION['authenticated']) && !$_SESSION['authenticated']) || !isset($_SESSION['authenticated'])) {
     header("Location: login.php");
     exit();
   }
 
   $dao = new Dao();
+  $logger = new KLogger ("log.txt" , KLogger::DEBUG);
+  $logger->LogDebug("On MyAccount page for user [{$_SESSION['user']}].");
   $userInfo = $dao->get_userInfo($_SESSION['user']);
+  $logger->LogDebug("User info return: " . print_r($userInfo,1));
+  //$logger->LogDebug("Session: " . print_r($_SESSION,1));
+
   echo print_r($userInfo,1);
 ?>
 
