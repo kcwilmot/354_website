@@ -1,5 +1,6 @@
 <!--header, shows name and email, change password link, address info, footer-->
 <?php
+  session_start();
   include_once("header.php");
 
   //Check if authenticated
