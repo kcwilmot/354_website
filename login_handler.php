@@ -10,7 +10,6 @@ try{
   $logger = new KLogger ("log.txt" , KLogger::DEBUG);
   $user = new User($_POST['email'], $_POST['password']);
 
-  $_SESSION['user'] = $user->email;
   $_SESSION['success'] = array();
   $_SESSION['fail'] = array();
 
@@ -22,6 +21,7 @@ try{
 
     $_SESSION['authenticated'] = true;
     $_SESSION['user'] = $user->email;
+    $_SESSION['authLevel'] = $dao->get_authLevel($user); 
 
     header("Location: https://polar-plains-93513.herokuapp.com/index.php");
     $logger->LogDebug("Session: " . print_r($_SESSION,1));

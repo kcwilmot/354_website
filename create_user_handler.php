@@ -39,7 +39,7 @@ try{
 
     $_SESSION['user'] = $user->email;
     $_SESSION['authenticated'] = true;
-    $_SESSION['authlevel'] = 0;
+    $_SESSION['authLevel'] = $dao->get_authLevel($user);
     header("Location: https://polar-plains-93513.herokuapp.com/myaccount.php");
     $logger->LogDebug("Session: " . print_r($_SESSION,1));
 

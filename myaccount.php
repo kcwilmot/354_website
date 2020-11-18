@@ -4,8 +4,13 @@
 
   //Check if authenticated
   if (isset($_SESSION['authenticated']) && !$_SESSION['authenticated'] || !isset($_SESSION['authenticated'])) {
-  header("Location: login.php");
-}
+    header("Location: login.php");
+    exit();
+  }
+
+  $dao = new Dao();
+  $userInfo = $dao->get_userInfo($_SESSION['user']);
+  print_r($userInfo,1);
 ?>
 
 <h1 id="my-account-header">My Account</h1>

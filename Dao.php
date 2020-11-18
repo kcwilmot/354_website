@@ -68,7 +68,7 @@ class Dao {
     }
   }
 
-  public function is_admin($user)
+  public function get_authLevel($user)
   {
     $this->logger->LogDebug("Checking if [{$user->email}] is an admin.");
     
@@ -91,6 +91,23 @@ class Dao {
       return 0;
     }
   }
+
+
+  public function get_userInfo($email)
+  {
+    $this->logger->LogDebug("Getting user info for [{$email}].");
+    
+    $conn = $this->getConnection();
+    $saveQuery = "select * from users where email = :email";    
+    $q = $conn->prepare($saveQuery);
+    $q->bindParam(":email", $user->email);
+    $q->execute();
+    $ret = $q->fetchAll();
+
+    $this->logger->LogDebug("Return array from get_userInfo(): " . print_r($ret,1));
+    return $ret;
+  }
+
 
 
   //Kennington's Example Functions
