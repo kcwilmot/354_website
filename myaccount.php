@@ -10,7 +10,7 @@
 
   $dao = new Dao();
   $userInfo = $dao->get_userInfo($_SESSION['user']);
-  print_r($userInfo,1);
+  echo print_r($userInfo,1);
 ?>
 
 <h1 id="my-account-header">My Account</h1>
