@@ -6,7 +6,6 @@
   //Check if authenticated
   if ((isset($_SESSION['authenticated']) && !$_SESSION['authenticated']) || !isset($_SESSION['authenticated'])) {
     header("Location: login.php");
-    exit();
   }
 
   $dao = new Dao();
