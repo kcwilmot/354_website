@@ -127,7 +127,7 @@ class Dao {
     $ret = $q->fetchAll();
     $this->logger->LogDebug("Return array from update: " . print_r($ret,1));
 
-    return $ret
+    return $ret;
   }
 
 
