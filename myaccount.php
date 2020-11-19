@@ -18,7 +18,7 @@
 
   echo "<h1 id=\"my-account-header\">My Account</h1>";
   echo "Email: " . $userInfo[0]['email'] . "<br>";
-  echo "<br>Changing password and updating mailing address under construction";
+  echo "<br>Changing password and updating mailing address under construction.";
   /*
   // TODO: set up a loop to print user info.
   for($i = 3; $i <= 12; $i++) {

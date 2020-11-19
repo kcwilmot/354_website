@@ -22,9 +22,13 @@
         <li class="footer-accounts">
             <a href="/myaccount.php"> My Account </a>
         </li>
-        <li class="footer-temp">
-            <a href="/admin.php"> Admin Page (temp) </a>
-        </li>
+        <?php 
+            if($_SESSION['authLevel'] == 1) {
+                echo "<li class=\"footer-temp\">";
+                echo "<a href=\"/admin.php\"> Admin Page </a>";
+                echo "</li>";
+            }
+        ?>
     </div>
 </div>
 <!--You have found an easter-egg! Be one of the first people 
