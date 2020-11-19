@@ -16,7 +16,7 @@ try{
   $logger->LogDebug("Entered login_handler");
   $ret_val = $dao->get_User($user);
 
-  if ($ret_val > 0) {
+  if ($ret_val) {
     $logger->LogDebug("User authenticated");
 
     $_SESSION['success'] = "Successfully logged in!";

@@ -56,7 +56,9 @@ class Dao {
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
-    $q->execute();
+    $this->logger->LogDebug("Checking for user, query string: [{$q}] exists.");
+    $tmp = $q->execute();
+    $this->logger->LogDebug("Query execute return:" . $tmp);
     $ret = $q->fetchAll();
     
     $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
