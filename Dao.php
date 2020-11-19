@@ -109,15 +109,15 @@ class Dao {
   }
 
 
-  public function update_user($info)
+  public function update_user($info,$email)
   {
     $this->logger->LogDebug("In update user info DAO function, info array:" . print_r($info));
-    $this->logger->LogDebug("Attempting to update user information for [{$info['email']}].");
+    $this->logger->LogDebug("Attempting to update user information for [{$email}].");
     
     $conn = $this->getConnection();
     $saveQuery = "update users set fname = :fname, lname = :lname, phone = :phone, address = :address where email = :email";    
     $q = $conn->prepare($saveQuery);
-    $q->bindParam(":email", $info['email']);
+    $q->bindParam(":email", $email);
     $q->bindParam(":fname", $info['firstname']);
     $q->bindParam(":lname", $info['lastname']);
     $q->bindParam(":phone", $info['phone']);

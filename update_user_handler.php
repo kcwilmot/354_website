@@ -20,7 +20,7 @@ try{
 
 
   //Check that the new email is a valid email
-  $email = $_POST['email'];
+  $email = $_SESSION['email'];
 //   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 //     $logger->LogDebug("Invalid email format.");
 //     $_SESSION['fail'][] = "Please enter a valid email.";
@@ -43,8 +43,8 @@ try{
   }
 
   //Try to update user in the database.
-  $_POST['email'] = $_SESSION['email'];
-  $result = $dao->update_user($_POST);
+//   $_POST['email'] = $_SESSION['email'];
+  $result = $dao->update_user($_POST,$_SESSION['email']);
 
   //If udate failed, oops. Back to update page.
   if(!$result){
