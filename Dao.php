@@ -111,7 +111,7 @@ class Dao {
 
   public function update_user($info,$email)
   {
-    $this->logger->LogDebug("In update user info DAO function, info array:" . print_r($info));
+    $this->logger->LogDebug("In update user info DAO function, info array: " . print_r($info,1));
     $this->logger->LogDebug("Attempting to update user information for [{$email}].");
     
     $conn = $this->getConnection();
@@ -124,7 +124,9 @@ class Dao {
     $q->bindParam(":address", $info['address']);
     $this->logger->LogDebug("Attempting to execute update stmt");
 
-    $q->execute();
+    $tmp = $q->execute();
+    $this->logger->LogDebug("Result of execute(): " . print_r($tmp,1));
+
     $ret = $q->fetchAll();
     $this->logger->LogDebug("Return array from update: " . print_r($ret,1));
 

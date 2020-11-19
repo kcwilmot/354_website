@@ -28,10 +28,13 @@ try{
 //     exit();
 //   } 
 
+$tmp = clone $_POST;
   //Check that all inputs are less than 50 characters (sql table constraint).
   foreach($_POST as $var){
     if (strlen($var) > 50){
         $_SESSION['fail'][] = "{$var} is too long, 50 character limit.";
+        $logger->LogDebug("{$var} is too long, 50 character limit.");
+
     }
   }
 
@@ -44,7 +47,7 @@ try{
 
   //Try to update user in the database.
 //   $_POST['email'] = $_SESSION['email'];
-  $result = $dao->update_user($_POST,$_SESSION['email']);
+  $result = $dao->update_user($tmp,$_SESSION['email']);
 
   //If udate failed, oops. Back to update page.
   if(!$result){
