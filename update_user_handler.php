@@ -53,9 +53,10 @@ $tmp = $_POST;
   if(!$result){
     $logger->LogError("Failed to update user info.");
 
-    $_SESSION['fail'][] = "Fatal error, could not update user information.";
+    $_SESSION['fail'][] = "Error, could not update user information.";
     header("Location: https://polar-plains-93513.herokuapp.com/updateaccount.php");
-    $logger->LogDebug("Error in update user. Session: " . print_r($_SESSION,1));
+    $logger->LogDebug("Error in update user. Result code: " . print_r($result,1));
+    $logger->LogDebug("Session: " . print_r($_SESSION,1));
     
     exit();
 

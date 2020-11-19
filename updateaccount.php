@@ -19,12 +19,12 @@
 
   <h1 id="update-account-header">Update Account Information</h1>
   <form method="post" action="update_user_handler.php">
-      <!--<div>Email: <input value="<?php $userInfo['email']?>" type="text" name="email"/></div>
-      <div>Password: <input value="<?php $userInfo['password']?>" type="password" name="password"/></div> -->
-      <div>First Name: <input value="<?php $userInfo['fname']?>" type="text" name="firstname"/></div>
-      <div>Last Name: <input value="<?php $userInfo['lname']?>" type="text" name="lastname"/></div>
-      <div>Phone Number: <input value="<?php $userInfo['phone']?>" type="text" name="phone"/></div>
-      <div>Address: <input value="<?php $userInfo['address']?>" type="text" name="address"/></div>
+      <!--<div>Email: <input value="<?php $userInfo[0]['email']?>" type="text" name="email"/></div>
+      <div>Password: <input value="<?php $userInfo[0]['password']?>" type="password" name="password"/></div> -->
+      <div>First Name: <input value="<?php $userInfo[0]['fname']?>" type="text" name="firstname"/></div>
+      <div>Last Name: <input value="<?php $userInfo[0]['lname']?>" type="text" name="lastname"/></div>
+      <div>Phone Number: <input value="<?php $userInfo[0]['phone']?>" type="text" name="phone"/></div>
+      <div>Address: <input value="<?php $userInfo[0]['address']?>" type="text" name="address"/></div>
       <div><input type="submit" value="Update User Information"></div>
     </form>
 
