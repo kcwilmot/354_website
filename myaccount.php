@@ -1,6 +1,6 @@
 <!--header, shows name and email, change password link, address info, footer-->
 <?php
-  // session_start();
+
   include_once("header.php");
   $dao = new Dao();
   $logger = new KLogger("log.txt" , KLogger::DEBUG);
@@ -14,14 +14,22 @@
   
   $userInfo = $dao->get_userInfo($_SESSION['user']);
   $logger->LogDebug("User info return: " . print_r($userInfo,1));
-  //$logger->LogDebug("Session: " . print_r($_SESSION,1));
 
-  // echo print_r($userInfo,1);
-?>
 
-<h1 id="my-account-header">My Account</h1>
-Name:  username<br>
-Email: email@emailservice.com
+  echo "<h1 id=\"my-account-header\">My Account</h1>";
+  echo "Email: " . $userInfo[0]['email'] . "<br>";
+  echo "<br>Changing password and updating mailing address under construction";
+  /*
+  // TODO: set up a loop to print user info.
+  for($i = 3; $i <= 12; $i++) {
+    if($i != 5) {
+
+    }
+  }
+
+
+
+
 
 <a href="myaccount.php">Change Password?</a><br>
 <div>
@@ -32,6 +40,9 @@ Email: email@emailservice.com
     City, ST 12345
   </div>
 </div>
-
-<?php
+*/
+//<?php
   include_once("footer.php");
+
+
+  // echo "<div class='bad'>Invalid Username or password</div>";
