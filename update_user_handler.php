@@ -28,7 +28,7 @@ try{
 //     exit();
 //   } 
 
-$tmp = clone $_POST;
+$tmp = $_POST;
   //Check that all inputs are less than 50 characters (sql table constraint).
   foreach($_POST as $var){
     if (strlen($var) > 50){

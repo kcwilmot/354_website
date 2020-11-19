@@ -19,7 +19,11 @@
 
   echo "<h1 id=\"my-account-header\">My Account</h1>";
   echo "Email: " . $userInfo[0]['email'] . "<br>";
-  echo "<br><a href=\"update.php\">Click here to update user information.</a>";
+  echo "First name: " . $userInfo[0]['fname'] . "<br>";
+  echo "Last name: " . $userInfo[0]['lname'] . "<br>";
+  echo "Phone: " . $userInfo[0]['phone'] . "<br>";
+  echo "Address: " . $userInfo[0]['address'] . "<br>";
+  echo "<br><a href=\"updateaccount.php\">Click here to update user information.</a>";
   /*
   // TODO: set up a loop to print user info.
   for($i = 3; $i <= 12; $i++) {
