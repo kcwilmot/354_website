@@ -59,7 +59,7 @@ class Dao {
     $q->execute();
     $ret = $q->fetchAll();
     
-    //$this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
+    $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
 
     if($ret[0]['email'] == $user->email && $ret[0]['password'] == $user->password) {
       return true;
