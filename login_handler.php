@@ -19,6 +19,7 @@ try{
   if ($ret_val > 0) {
     $logger->LogDebug("User authenticated");
 
+    $_SESSION['success'] = "Successfully logged in!";
     $_SESSION['authenticated'] = true;
     $_SESSION['user'] = $user->email;
     $_SESSION['authLevel'] = $dao->get_authLevel($user); 

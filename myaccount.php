@@ -3,7 +3,7 @@
   // session_start();
   include_once("header.php");
   $dao = new Dao();
-  $logger = new KLogger ("log.txt" , KLogger::DEBUG);
+  $logger = new KLogger("log.txt" , KLogger::DEBUG);
   $logger->LogDebug("On MyAccount page for user [{$_SESSION['user']}].");
 
   //Check if authenticated
