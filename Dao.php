@@ -100,7 +100,7 @@ class Dao {
     $conn = $this->getConnection();
     $saveQuery = "select * from users where email = :email";    
     $q = $conn->prepare($saveQuery);
-    $q->bindParam(":email", $user->email);
+    $q->bindParam(":email", $email);
     $q->execute();
     $ret = $q->fetchAll();
 
