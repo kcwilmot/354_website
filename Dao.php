@@ -109,6 +109,32 @@ class Dao {
   }
 
 
+  public function update_user($info)
+  {
+    $this->logger->LogDebug("Attempting to update user information for [{$info['email']}].");
+    
+    $conn = $this->getConnection();
+    $saveQuery = "update users set fname = :fname, lname = :lname, phone = :phone, address = :address where email = :email";    
+    $q = $conn->prepare($saveQuery);
+    $q->bindParam(":email", $info['email']);
+    $q->bindParam(":fname", $info['firstname']);
+    $q->bindParam(":lname", $info['lastname']);
+    $q->bindParam(":phone", $info['phone']);
+    $q->bindParam(":address", $info['address']);
+    $this->logger->LogDebug("Attempting to execute update stmt");
+
+    $q->execute();
+    $ret = $q->fetchAll();
+    $this->logger->LogDebug("Return array from update: " . print_r($ret,1));
+
+    return $ret
+  }
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
 
   //Kennington's Example Functions
   public function getComments () {
