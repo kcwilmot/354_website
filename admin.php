@@ -5,6 +5,12 @@
     include_once("style.css"); 
   echo "</style>";
   */
+  if ( (isset($_SESSION['authenticated']) && !$_SESSION['authenticated']) || 
+       (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] != 1) ||
+       !isset($_SESSION['authenticated']) ) {
+    header("Location: login.php");
+    exit();
+  }
 ?>
 
 <body> 
