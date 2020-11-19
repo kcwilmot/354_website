@@ -111,6 +111,7 @@ class Dao {
 
   public function update_user($info)
   {
+    $this->logger->LogDebug("In update user info DAO function, info array:" . print_r($info));
     $this->logger->LogDebug("Attempting to update user information for [{$info['email']}].");
     
     $conn = $this->getConnection();
