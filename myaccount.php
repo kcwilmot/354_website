@@ -18,11 +18,11 @@
 
 
   echo "<h1 id=\"my-account-header\">My Account</h1>";
-  echo "Email: " . $userInfo[0]['email'] . "<br>";
-  echo "First name: " . $userInfo[0]['fname'] . "<br>";
-  echo "Last name: " . $userInfo[0]['lname'] . "<br>";
-  echo "Phone: " . $userInfo[0]['phone'] . "<br>";
-  echo "Address: " . $userInfo[0]['address'] . "<br>";
+  echo "Email: " . htmlspecialchars($userInfo[0]['email']) . "<br>";
+  echo "First name: " . htmlspecialchars($userInfo[0]['fname']) . "<br>";
+  echo "Last name: " . htmlspecialchars($userInfo[0]['lname']) . "<br>";
+  echo "Phone: " . htmlspecialchars($userInfo[0]['phone']) . "<br>";
+  echo "Address: " . htmlspecialchars($userInfo[0]['address']) . "<br>";
   echo "<br><a href=\"updateaccount.php\">Click here to update user information.</a>";
   /*
   // TODO: set up a loop to print user info.
