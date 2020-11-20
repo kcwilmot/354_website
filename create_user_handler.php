@@ -14,7 +14,14 @@ try{
   $_SESSION['fail'] = array();
 
   //Using PHP's regex for validating emails
-  
+  if(strlen($user->password) < 3) {
+    $logger->LogDebug("Password too short.");
+    $_SESSION['fail'][] = "Password must be at least 3 characters long.";
+    header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
+    exit();
+  }
+
+
   $email = $user->email;
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $logger->LogDebug("Invalid email format.");
