@@ -8,7 +8,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-	<link href="favicon.png" type="image/png" rel="shortcut icon"/>
+	<link href="img/favicon.png" type="image/png" rel="shortcut icon"/>
     <title>Bitey Cat Customs</title>
 
     <div id="header-nav">
