@@ -13,7 +13,8 @@ try{
   $_SESSION['success'] = array();
   $_SESSION['fail'] = array();
 
-  //Using PHP's regex for validating emails
+
+  //Make sure password is at least 3 characters long.
   if(strlen($user->password) < 3) {
     $logger->LogDebug("Password too short.");
     $_SESSION['fail'][] = "Password must be at least 3 characters long.";
@@ -21,7 +22,7 @@ try{
     exit();
   }
 
-
+  //Using PHP's regex for validating emails
   $email = $user->email;
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $logger->LogDebug("Invalid email format.");
