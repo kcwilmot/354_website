@@ -9,6 +9,7 @@ try{
   $dao = new Dao();
   $logger = new KLogger ("log.txt" , KLogger::DEBUG);
   $user = new User($_POST['email'], $_POST['password']);
+  $email = $user->email;
 
   $_SESSION['success'] = array();
   $_SESSION['fail'] = array();
@@ -16,16 +17,15 @@ try{
 
   //Make sure password is at least 3 characters long.
   if(strlen($user->password) < 3) {
-    $logger->LogDebug("Password too short.");
+    $logger->LogDebug("Password too short for new user [{$email}].");
     $_SESSION['fail'][] = "Password must be at least 3 characters long.";
     header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
     exit();
   }
 
   //Using PHP's regex for validating emails
-  $email = $user->email;
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $logger->LogDebug("Invalid email format.");
+    $logger->LogDebug("Invalid email format. [{$email}] is not a true email.");
     $_SESSION['fail'][] = "Please enter a valid email.";
     header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
     exit();
