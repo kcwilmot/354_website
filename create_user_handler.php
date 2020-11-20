@@ -19,17 +19,20 @@ try{
   if(strlen($user->password) < 3) {
     $logger->LogDebug("Password too short for new user [{$email}].");
     $_SESSION['fail'][] = "Password must be at least 3 characters long.";
-    header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
-    exit();
   }
 
   //Using PHP's regex for validating emails
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $logger->LogDebug("Invalid email format. [{$email}] is not a true email.");
     $_SESSION['fail'][] = "Please enter a valid email.";
+  }
+  
+  if(count($_SESSION['fail']) > 0) {
     header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
     exit();
   }
+
+
 
   $result = $dao->create_user($user);
 
