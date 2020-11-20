@@ -15,14 +15,14 @@ class Dao {
     $this->logger = new KLogger ("log.txt" , KLogger::DEBUG);
   }
 
-
+  //Open a connection to the database.
   public function getConnection () 
   {
     $this->logger->LogDebug("Getting a connection");
     try {
       $dsn = "mysql:dbname=$this->db;host=$this->host";
       $conn = new PDO($dsn, $this->user, $this->pass);
-      $this->logger->LogDebug("Established DB connection");
+      //$this->logger->LogDebug("Established DB connection");
       return $conn;
     } catch (Exception $e) {
       $this->logger->LogFatal("FAILED TO ESTABLISH DB CONNECTION: " . print_r($e, 1));
@@ -30,7 +30,7 @@ class Dao {
     }
   }
 
-
+  //Atempt to insert a new user into the database. All users are created as standard users, not admins.
   public function create_user($user)
   {
     $this->logger->LogInfo("Creating a new user [{$user->email}] as a standard user.");
@@ -47,6 +47,7 @@ class Dao {
 
   } 
   
+  //See if the user credentials match an existing user in the database.
   public function get_user($user)
   {
     $this->logger->LogDebug("Checking if user [{$user->email}] exists.");
@@ -56,14 +57,15 @@ class Dao {
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
     $q->bindParam(":password", $user->password);
-    $this->logger->LogDebug("Checking for user, query string: " . print_r($q,1));
+
+    //$this->logger->LogDebug("Checking for user, query string: " . print_r($q,1));
     $tmp = $q->execute();
-    $this->logger->LogDebug("Query execute return:" . $tmp);
+    //$this->logger->LogDebug("Query execute return:" . $tmp);
     $ret = $q->fetchAll();
     
-    $this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
-    $this->logger->LogDebug("Email check value: " . ($ret[0]['email'] === $user->email));
-    $this->logger->LogDebug("Password check value: " . ($ret[0]['password'] === $user->password));
+    //$this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
+    //$this->logger->LogDebug("Email check value: " . ($ret[0]['email'] === $user->email));
+    //$this->logger->LogDebug("Password check value: " . ($ret[0]['password'] === $user->password));
 
     if($ret[0]['email'] === $user->email && $ret[0]['password'] === $user->password) {
       return true;
@@ -72,6 +74,7 @@ class Dao {
     }
   }
 
+  //See if the provided user is an administrator or regular user.
   public function get_authLevel($user)
   {
     $this->logger->LogDebug("Checking if [{$user->email}] is an admin.");
@@ -84,8 +87,8 @@ class Dao {
     $q->execute();
     $ret = $q->fetchAll();
 
-    $this->logger->LogDebug("Return array from fetchAll(): " . print_r($ret,1));
-    $this->logger->LogDebug("Return val of \$ret[0]['authlevel']: " . print_r($ret[0]['authlevel'],1));
+    //$this->logger->LogDebug("Return array from fetchAll(): " . print_r($ret,1));
+    //$this->logger->LogDebug("Return val of \$ret[0]['authlevel']: " . print_r($ret[0]['authlevel'],1));
 
     if($ret[0]['authlevel'] == 1) {
       $this->logger->LogDebug("User [{$user->email}] is an admin.");
@@ -96,7 +99,7 @@ class Dao {
     }
   }
 
-
+  //Gets all user info from the database.
   public function get_userInfo($email)
   {
     $this->logger->LogDebug("Getting user info for [{$email}].");
@@ -108,14 +111,14 @@ class Dao {
     $q->execute();
     $ret = $q->fetchAll();
 
-    $this->logger->LogDebug("Return array from get_userInfo(): " . print_r($ret,1));
+    //$this->logger->LogDebug("Return array from get_userInfo(): " . print_r($ret,1));
     return $ret;
   }
 
-
+  //Updates user information in the database.
   public function update_user($info,$email)
   {
-    $this->logger->LogDebug("In update user info DAO function, info array: " . print_r($info,1));
+    //$this->logger->LogDebug("In update user info DAO function, info array: " . print_r($info,1));
     $this->logger->LogDebug("Attempting to update user information for [{$email}].");
     
     $conn = $this->getConnection();
@@ -126,15 +129,16 @@ class Dao {
     $q->bindParam(":lname", $info['lastname']);
     $q->bindParam(":phone", $info['phone']);
     $q->bindParam(":address", $info['address']);
-    $this->logger->LogDebug("Attempting to execute update stmt");
+    
+    //$this->logger->LogDebug("Attempting to execute update stmt");
 
-    $tmp = $q->execute();
-    $this->logger->LogDebug("Result of execute(): " . print_r($tmp,1));
+    $ret = $q->execute();
+    $tmp = $q->fetchAll();
 
-    $ret = $q->fetchAll();
-    $this->logger->LogDebug("Return array from update: " . print_r($ret,1));
+    $this->logger->LogDebug("Result of execute(): " . print_r($ret,1));
+    $this->logger->LogDebug("Return array from update: " . print_r($tmp,1));
 
-    return $tmp;
+    return $ret;
   }
 
 

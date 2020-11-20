@@ -2,6 +2,7 @@
 <?php
   include_once("header.php");
 ?>
+
 <h1 id="custom-item-header">Custom Items!</h1><br>
 Have an idea? <br> 
 Contact us for an estimate!<br>
@@ -9,6 +10,8 @@ biteycatcustoms@email.com<br>
 <div id="custom-item-page-spacer"> </div>
 Have something designed?<br>
 Upload an .svg file!<br>
+
+<!--TODO: Get file from user and upload it to server-->
 <form id="custom-item-file-upload">
   <input type="file" id="custom-item-file-upload" name="custom-item-file">
   <input type="submit">

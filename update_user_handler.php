@@ -21,12 +21,12 @@ try{
 
   //Check that the new email is a valid email
   $email = $_SESSION['user'];
-//   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-//     $logger->LogDebug("Invalid email format.");
-//     $_SESSION['fail'][] = "Please enter a valid email.";
-//     header("Location: https://polar-plains-93513.herokuapp.com/updateaccount.php");
-//     exit();
-//   } 
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $logger->LogDebug("Invalid email format.");
+    $_SESSION['fail'][] = "Please enter a valid email.";
+    header("Location: https://polar-plains-93513.herokuapp.com/updateaccount.php");
+    exit();
+  } 
 
 $tmp = $_POST;
   //Check that all inputs are less than 50 characters (sql table constraint).

@@ -5,16 +5,19 @@
   $logger = new KLogger("log.txt" , KLogger::DEBUG);
   $logger->LogDebug("On Update Account page for user [{$_SESSION['user']}].");
 
-  //Check if authenticated
+
+  //Check if authenticated, else redirect to login page.
   if ((isset($_SESSION['authenticated']) && !$_SESSION['authenticated']) || !isset($_SESSION['authenticated'])) {
     header("Location: login.php");
     exit();
   }
 
-  
+  //Get user info to set up presets.
   $userInfo = $dao->get_userInfo($_SESSION['user']);
+
+
   $logger->LogDebug("User info return: " . print_r($userInfo,1));
-  
+  $logger->LogDebug("userinfo[0]['email']: " . print_r($userInfo[0]['email'],1));
   ?>
 
   <h1 id="update-account-header">Update Account Information</h1>
@@ -30,7 +33,5 @@
 
 
 <?php
-
-
   include_once("footer.php");
 

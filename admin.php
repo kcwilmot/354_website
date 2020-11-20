@@ -1,10 +1,8 @@
 <?php
 
   include_once("header.php");
-  /*echo "<style>"; 
-    include_once("style.css"); 
-  echo "</style>";
-  */
+  
+  //Make sure that only a logged in administrator can access the page.
   if ( (isset($_SESSION['authenticated']) && !$_SESSION['authenticated']) || 
        (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] != 1) ||
        !isset($_SESSION['authenticated']) ) {

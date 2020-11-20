@@ -20,8 +20,10 @@
         <div>
             <li class="header-links">
                 <?php
+                  //If the user is logged in, display link to logout page.
                   if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
                       echo "<a href=\"logout_handler.php\">Log Out</a>";
+                  //If the user is not logged in, display link to login page.
                   } else {
                   echo "<a href=\"login.php\"> Login </a>";
                   }

@@ -1,7 +1,7 @@
 <!--header, shows name and email, change password link, address info, footer-->
 <?php
-
   include_once("header.php");
+
   $dao = new Dao();
   $logger = new KLogger("log.txt" , KLogger::DEBUG);
   $logger->LogDebug("On MyAccount page for user [{$_SESSION['user']}].");
@@ -12,11 +12,12 @@
     exit();
   }
 
-  
+  //Get all user info to display.
   $userInfo = $dao->get_userInfo($_SESSION['user']);
   $logger->LogDebug("User info return: " . print_r($userInfo,1));
 
 
+  //Display saved user info. Escape characters to prevent HTML exploits.
   echo "<h1 id=\"my-account-header\">My Account</h1>";
   echo "Email: " . htmlspecialchars($userInfo[0]['email']) . "<br>";
   echo "First name: " . htmlspecialchars($userInfo[0]['fname']) . "<br>";
@@ -31,23 +32,9 @@
 
     }
   }
-
-
-
-
-
-<a href="myaccount.php">Change Password?</a><br>
-<div>
-  Shipping Address:
-  <div id="account-shipping-address">
-    555 A Street Adress
-    Apt 666
-    City, ST 12345
-  </div>
-</div>
 */
-//<?php
-  include_once("footer.php");
+
+//<a href="myaccount.php">Change Password?</a><br>
 
 
-  // echo "<div class='bad'>Invalid Username or password</div>";
+include_once("footer.php");

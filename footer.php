@@ -22,7 +22,8 @@
         <li class="footer-accounts">
             <a href="/myaccount.php"> My Account </a>
         </li>
-        <?php 
+        <?php
+            //Only display access to the admin page if user is an administrator. 
             if($_SESSION['authLevel'] == 1) {
                 echo "<li class=\"footer-temp\">";
                 echo "<a href=\"/admin.php\"> Admin Page </a>";

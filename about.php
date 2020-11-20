@@ -1,7 +1,7 @@
-<!--header, pic, about words, name, bio, paragraph, other stuff links, footer-->
 <?php
   include_once("header.php");
 ?>
+
 <div id="about-image-container">
 <img id="about-img" src="img/logo.png">
 </div>
@@ -26,5 +26,6 @@ Critical Role</a>
 </li>
 <li><a href="https://pixabay.com/images/search/cat/">Cat Pics</a>
 </li>
+
 <?php
   include_once("footer.php");
