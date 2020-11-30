@@ -3,7 +3,7 @@
 ?>
   <html>
   <body>
-    <h1>New User</h1> <span id = "new_user_tooltip">?</span>
+    <h1>New User <span id = "new_user_tooltip">?</span></h1>
     <?php
       //Tell user all issues with last attempt to create user.
       //Issue are bad email format and/or password is too short. (3 char min)
