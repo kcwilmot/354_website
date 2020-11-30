@@ -3,10 +3,11 @@
     font-family: 'Lato', sans-serif;
 }
 
-html {
+html,body, head {
     background-image: url('img/background_wood2.jpeg');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
 }
 /*
 head {
