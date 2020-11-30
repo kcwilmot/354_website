@@ -7,7 +7,7 @@
     <?php
       //Tell user all issues with last attempt to create user.
       //Issue are bad email format and/or password is too short. (3 char min)
-      foreach ($_SESSION['fail'] as $message) {
+      foreach ($_SESSION['create_user_fail'] as $message) {
         echo "<div class='bad'>{$message}<span class='close_error'>X</span></div>";
       }
     ?>
