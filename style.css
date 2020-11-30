@@ -8,6 +8,7 @@ html,body, head {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 100%;
 }
 /*
 head {
@@ -58,10 +59,12 @@ head {
 }
 
 .bad {
-    background-color: red;
+    background-color: darkred;
     color: white;
     padding: 10px 10px;
     width: 300px;
+    border-radius: 10px;
+    border-color: black;
 }
 
 .close_error {
