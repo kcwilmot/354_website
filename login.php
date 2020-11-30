@@ -9,7 +9,7 @@
 
     <?php
       //Echo all errors generated from handler. Pretty much just the one error...
-      foreach ($_SESSION['fail'] as $message) {
+      foreach ($_SESSION['login_fail'] as $message) {
         echo "<div class='bad'>{$message}<span class='close_error'>X</span></div>";
       }
     ?>

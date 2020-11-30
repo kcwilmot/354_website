@@ -12,22 +12,22 @@ try{
   $email = $user->email;
 
   $_SESSION['success'] = array();
-  $_SESSION['fail'] = array();
+  $_SESSION['create_user_fail'] = array();
 
   //Using PHP's regex for validating emails
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $logger->LogDebug("Invalid email format. [{$email}] is not a true email.");
-    $_SESSION['fail'][] = "Please enter a valid email.";
+    $_SESSION['create_user_fail'][] = "Please enter a valid email.";
   }
 
   //Make sure password is at least 3 characters long.
   if(strlen($user->password) < 3) {
     $logger->LogDebug("Password too short for new user [{$email}].");
-    $_SESSION['fail'][] = "Password must be at least 3 characters long.";
+    $_SESSION['create_user_fail'][] = "Password must be at least 3 characters long.";
   }
   
   //If errors were generated above, redirect back to create user page.
-  if(count($_SESSION['fail']) > 0) {
+  if(count($_SESSION['create_user_fail']) > 0) {
     header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
     exit();
   }
@@ -39,7 +39,7 @@ try{
   if(!$result){
     $logger->LogError("Failed to create a new user.");
 
-    $_SESSION['fail'][] = "User already exists.";
+    $_SESSION['create_user_fail'][] = "User already exists.";
     header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
     //$logger->LogDebug("Session: " . print_r($_SESSION,1));
     

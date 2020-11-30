@@ -11,7 +11,7 @@ try{
   $user = new User($_POST['email'], $_POST['password']);
 
   $_SESSION['success'] = array();
-  $_SESSION['fail'] = array();
+  $_SESSION['login_fail'] = array();
 
   $logger->LogDebug("Entered login_handler");
 
@@ -41,7 +41,7 @@ try{
     $logger->LogDebug("Failed to get user");
 
     $_SESSION['authenticated'] = false;
-    $_SESSION['fail'][] = "Username or password is incorrect.";
+    $_SESSION['login_fail'][] = "Username or password is incorrect.";
 
     //$logger->LogDebug("Session: " . print_r($_SESSION,1));
 
@@ -54,7 +54,7 @@ try{
 
     $this->logger->LogFatal("ERROR IN LOGIN HANDLER: " . print_r($e, 1));
 
-    $_SESSION['fail'][] = "Unkown error, unable to log in. Please try again.";
+    $_SESSION['login_fail'][] = "Unkown error, unable to log in. Please try again.";
 
     header("Location: https://polar-plains-93513.herokuapp.com/login.php");
     exit();
