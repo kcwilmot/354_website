@@ -32,9 +32,9 @@
                 ?>
             <li class="header-links">
                 <a href="checkout.php"> Checkout </a>
-            <li class="header-links">
-                <a href="faq.php"> FAQ </a>
-            </li>
+            <!--<li class="header-links">
+                <a href="meme\faq.php"> FAQ </a>
+            </li>-->
         </div>
         <form>
             <label>Search</label>
