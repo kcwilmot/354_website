@@ -3,8 +3,16 @@
     font-family: 'Lato', sans-serif;
 }
 
+body {
+    background-image: url('img/background_wood2.jpeg');
+}
+
+head {
+    background-image: url('img/background_wood1.jpeg');
+}
+
 #footer {
-    background-color:#AAAAAA;
+    background-image: url('img/background_wood1.jpeg');
     
 }
 
