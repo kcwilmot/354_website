@@ -40,10 +40,10 @@
                 <a href="meme\faq.php"> FAQ </a>
             </li>-->
         </div>
-        <form>
+        <!--<form>
             <label>Search</label>
             <input type="text" id="search-form">
-        </form>
+        </form>-->
         <a href="earrings.php" class="header-shop-list">Earrings</a>
         <a href="customitem.php" class="header-shop-list">Custom Items</a>
         <a href="about.php" class="header-links">About</a>
