@@ -15,12 +15,20 @@
     ?>
     
     <form method="post" action="login_handler.php">
-      <div>Email: <input type="text" name="email"/></div>
-      <div>Password: <input type="password" name="password"/></div>
-      <div><input type="submit" value="Login"></div>
+      <div>
+        <label for="email">Enter your email:</label>
+        <input type="text" name="email"/>
+      </div>
+      <div>
+        <label for="password">Enter your Password:</label>
+        <input type="password" name="password"/>
+      </div>
+      <div>
+        <input type="submit" value="Login">
+      </div>
     </form>
 
-    New to the site? 
+    New to the site?
     <a href="signup.php">Click here to create a new user</a>
   </body>
 </html>
