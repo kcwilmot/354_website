@@ -53,10 +53,11 @@ class Dao {
     $this->logger->LogDebug("Checking if user [{$user->email}] exists.");
     
     $conn = $this->getConnection();
-    $saveQuery = "select email,password from users where email = :email and password = :password";    
+    //$saveQuery = "select email,password from users where email = :email and password = :password";    
+    $saveQuery = "select email,password from users where email = :email";    
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
-    $q->bindParam(":password", $user->password);
+    //$q->bindParam(":password", $user->password);
 
     //$this->logger->LogDebug("Checking for user, query string: " . print_r($q,1));
     $tmp = $q->execute();
