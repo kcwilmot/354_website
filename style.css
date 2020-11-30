@@ -55,7 +55,7 @@ head {
     margin: 5px 5px;
 }
 
-#bad {
+.bad {
     background-color: red;
     color: white;
     padding: 10px 10px;
