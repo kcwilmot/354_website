@@ -4,7 +4,7 @@
    echo '<h1>Items For Sale</h1>';
 
    //Get all images in the img folder.
-   $dirname = "img/";
+   $dirname = "img/gallery/";
    $images = glob($dirname."*.jpg");
 
    //Display all images in a gallery.
