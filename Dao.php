@@ -39,7 +39,7 @@ class Dao {
     $saveQuery = "insert into users (email, password, authlevel) values (:email, :password, 0)";
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
-    $q->bindParam(":password", $user->password);
+    $q->bindParam(":password", $user->hash);
     $ret = $q->execute();
 
     $this->logger->LogDebug("Create User query execution result: " . print_r($ret));
