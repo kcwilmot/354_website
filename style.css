@@ -61,3 +61,7 @@ head {
     padding: 10px 10px;
     width: 300px;
 }
+
+.close_error {
+    float: right;
+}

@@ -1,5 +1,4 @@
-alert("Loaded scripts.js from jquery");
-
+//Fade out error
 $(function(){
-    
+    $(".bad").fadeOut(20);
 })
