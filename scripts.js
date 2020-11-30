@@ -1,4 +1,6 @@
 //Fade out error
 $(function(){
-    $(".bad").fadeOut(20);
+    $(".close_error").click(function () {
+        $(this).parent('.bad').fadeOut()
+    })
 })

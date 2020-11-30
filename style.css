@@ -65,3 +65,8 @@ head {
 .close_error {
     float: right;
 }
+
+.close_error:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
