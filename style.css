@@ -70,3 +70,16 @@ head {
     text-decoration: underline;
     cursor: pointer;
 }
+
+#new_user_tooltip {
+    height: 25px;
+    height: 25px;
+    background-color: aqua;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#new_user_tooltip:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

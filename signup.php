@@ -3,7 +3,7 @@
 ?>
   <html>
   <body>
-    <h1>New User</h1>
+    <h1>New User</h1> <span id = "new_user_tooltip">?</span>
     <?php
       //Tell user all issues with last attempt to create user.
       //Issue are bad email format and/or password is too short. (3 char min)
@@ -14,7 +14,7 @@
     <form method="post" action="create_user_handler.php">
       <div>Email: <input type="text" name="email"/></div>
       <div>Password: <input type="password" name="password"/></div>
-      <div><input type="submit" value="Create User"><span id = "new_user_tooltip">?</span></div>
+      <div><input type="submit" value="Create User"></div>
     </form>
   </body>
 </html>
