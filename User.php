@@ -6,14 +6,23 @@ class User {
 
   public $email;
   public $password;
+  public $hash;
 
   public function __construct($email, $password) {
     $this->email = $email;
     $this->password = $password;
+    $this->hash = $this->hashPassword($password); 
   }
 
-  //TODO: Implement a hash function that returns the hash.
+  //Returns a hash of the password using PHP's default hashing algorithm.
+  //The current default is BCRYPT.
   public static function hashPassword($password) {
-
+    return password_hash($password,PASSWORD_DEFAULT);
   }
+
+
+  //
+  public function verify($hash) {
+    return password_verify($this->password, $hash);
+}
 }

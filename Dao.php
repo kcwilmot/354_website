@@ -67,7 +67,7 @@ class Dao {
     //$this->logger->LogDebug("Email check value: " . ($ret[0]['email'] === $user->email));
     //$this->logger->LogDebug("Password check value: " . ($ret[0]['password'] === $user->password));
 
-    if($ret[0]['email'] === $user->email && $ret[0]['password'] === $user->password) {
+    if($ret[0]['email'] === $user->email && $user->verify($ret[0]['password'])) {
       return true;
     } else {
       return false;
