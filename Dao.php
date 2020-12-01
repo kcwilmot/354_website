@@ -81,10 +81,9 @@ class Dao {
     $this->logger->LogDebug("Checking if [{$user->email}] is an admin.");
     
     $conn = $this->getConnection();
-    $saveQuery = "select authlevel from users where email = :email and password = :password";    
+    $saveQuery = "select authlevel from users where email = :email";    
     $q = $conn->prepare($saveQuery);
     $q->bindParam(":email", $user->email);
-    $q->bindParam(":password", $user->password);
     $q->execute();
     $ret = $q->fetchAll();
 
