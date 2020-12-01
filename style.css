@@ -58,6 +58,13 @@ head {
     margin: 5px 5px;
 }
 
+#shop-product-img {
+    max-width: 50px;
+    max-height: 50px;
+    overflow: hidden;
+    margin: 5px 5px
+}
+
 .bad {
     background-color: darkred;
     color: white;
