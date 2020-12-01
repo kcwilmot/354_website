@@ -18,16 +18,16 @@ try{
   $logger->LogDebug("In update_user_handler.");
   $logger->LogDebug("Update user info post: " . print_r($_POST,1));
 
-
+/*
   //Check that the new email is a valid email
   $email = $_SESSION['user'];
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $logger->LogDebug("Invalid email format.");
     $_SESSION['fail'][] = "Please enter a valid email.";
-    header("Location: https://polar-plains-93513.herokuapp.com/updateaccount.php");
+    header("Location: updateaccount.php");
     exit();
   } 
-
+*/
 $tmp = $_POST;
   //Check that all inputs are less than 50 characters (sql table constraint).
   foreach($_POST as $var){
@@ -41,7 +41,7 @@ $tmp = $_POST;
   //If any fields too long, return to update page.
   if(count($_SESSION['fail']) > 0) {
       $_SESSION['update_form'] = $_POST;
-    header("Location: https://polar-plains-93513.herokuapp.com/updateaccount.php");
+    header("Location: updateaccount.php");
     exit();
   }
 

@@ -18,11 +18,10 @@ class Dao {
   //Open a connection to the database.
   public function getConnection () 
   {
-    $this->logger->LogDebug("Getting a connection");
+    //$this->logger->LogDebug("Getting a connection");
     try {
       $dsn = "mysql:dbname=$this->db;host=$this->host";
       $conn = new PDO($dsn, $this->user, $this->pass);
-      //$this->logger->LogDebug("Established DB connection");
       return $conn;
     } catch (Exception $e) {
       $this->logger->LogFatal("FAILED TO ESTABLISH DB CONNECTION: " . print_r($e, 1));
@@ -59,9 +58,7 @@ class Dao {
     $q->bindParam(":email", $user->email);
     //$q->bindParam(":password", $user->password);
 
-    //$this->logger->LogDebug("Checking for user, query string: " . print_r($q,1));
     $tmp = $q->execute();
-    //$this->logger->LogDebug("Query execute return:" . $tmp);
     $ret = $q->fetchAll();
     
     //$this->logger->LogDebug("Return val from fetchAll(): " . print_r($ret,1));
@@ -139,36 +136,6 @@ class Dao {
     $this->logger->LogDebug("Return array from update: " . print_r($tmp,1));
 
     return $ret;
-  }
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
-  //Kennington's Example Functions
-  public function getComments () {
-    $conn = $this->getConnection();
-    return $conn->query("select comment_id, comment, date_entered from comment order by date_entered desc", PDO::FETCH_ASSOC);
-  }
-
-  public function addComment ($comment) {
-    $this->logger->LogInfo("adding a comment [{$comment}]");
-    $conn = $this->getConnection();
-    $saveQuery = "insert into comment (comment, user_id) values (:comment, 1)";
-    $q = $conn->prepare($saveQuery);
-    $q->bindParam(":comment", $comment);
-    $q->execute();
-  }
-
-  public function deleteComment ($id) {
-    $conn = $this->getConnection();
-    $this->logger->LogInfo("deleting a comment [{$id}]");
-    $deleteQuery = "delete from comment where comment_id = :comment_id";
-    $q = $conn->prepare($deleteQuery);
-    $q->bindParam(":comment_id", $id);
-    $q->execute();
   }
 
 }

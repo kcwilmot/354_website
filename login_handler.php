@@ -33,7 +33,7 @@ try{
     //$logger->LogDebug("Session: " . print_r($_SESSION,1));
 
     //Redirect to home page.
-    header("Location: https://polar-plains-93513.herokuapp.com/index.php");
+    header("Location: index.php");
     exit();
 
     //User does not exist in the database.
@@ -45,7 +45,7 @@ try{
 
     //$logger->LogDebug("Session: " . print_r($_SESSION,1));
 
-    header("Location: https://polar-plains-93513.herokuapp.com/login.php");
+    header("Location: login.php");
     exit();
   }
   
@@ -56,7 +56,7 @@ try{
 
     $_SESSION['login_fail'][] = "Unkown error, unable to log in. Please try again.";
 
-    header("Location: https://polar-plains-93513.herokuapp.com/login.php");
+    header("Location: login.php");
     exit();
 
 }

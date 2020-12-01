@@ -28,7 +28,7 @@ try{
   
   //If errors were generated above, redirect back to create user page.
   if(count($_SESSION['create_user_fail']) > 0) {
-    header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
+    header("Location: signup.php");
     exit();
   }
 
@@ -40,7 +40,7 @@ try{
     $logger->LogError("Failed to create a new user.");
 
     $_SESSION['create_user_fail'][] = "User already exists.";
-    header("Location: https://polar-plains-93513.herokuapp.com/signup.php");
+    header("Location: signup.php");
     //$logger->LogDebug("Session: " . print_r($_SESSION,1));
     
     exit();
@@ -52,7 +52,7 @@ try{
     $_SESSION['user'] = $user->email;
     $_SESSION['authenticated'] = true;
     $_SESSION['authLevel'] = $dao->get_authLevel($user);
-    header("Location: https://polar-plains-93513.herokuapp.com/myaccount.php");
+    header("Location: myaccount.php");
     $logger->LogDebug("Session: " . print_r($_SESSION,1));
 
     exit();

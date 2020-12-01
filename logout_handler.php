@@ -8,5 +8,5 @@
   
   //Destry the session and redirect to home page.
   session_destroy();
-  header("Location: https://polar-plains-93513.herokuapp.com/index.php");
+  header("Location: index.php");
   exit();

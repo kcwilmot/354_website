@@ -18,6 +18,11 @@
 
   $logger->LogDebug("User info return: " . print_r($userInfo,1));
   $logger->LogDebug("userinfo[0]['email']: " . print_r($userInfo[0]['email'],1));
+  
+  foreach ($_SESSION['fail'] as $message) {
+    echo "<div class='bad'>{$message}<span class='close_error'>X</span></div>";
+  }
+  
   ?>
 
   <h1 id="update-account-header">Update Account Information</h1>
