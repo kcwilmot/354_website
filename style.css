@@ -52,8 +52,8 @@ head {
 }
 
 .home-gallery-img {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 50px;
+    max-height: 50px;
     overflow: hidden;
     margin: 5px 5px;
 }
